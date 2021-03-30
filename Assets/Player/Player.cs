@@ -12,6 +12,9 @@ public class Player : MonoBehaviour {
 
     Controller2D controller;
 
+    Interactable closestInteractable;
+    float interactableRadius = 5;
+
     void Start() {
         controller = GetComponent<Controller2D>();
     }
@@ -36,6 +39,30 @@ public class Player : MonoBehaviour {
         
         if(controller.collisions.above || controller.collisions.below) {
             velocity.y = 0;
+        }
+
+        FindInteractables(); 
+        if(closestInteractable && Input.GetKeyDown(KeyCode.Space)) {
+            closestInteractable.interactedWith();
+        }      
+    }
+
+    void FindInteractables() {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, interactableRadius);
+        closestInteractable = null;
+
+        float closestDistance = Mathf.Infinity;
+        foreach(Collider2D collider in  colliders) {
+            Interactable interactable = collider.GetComponent<Interactable>();
+            
+            if(interactable) {
+                float dist = Vector2.Distance(collider.transform.position, transform.position);
+                
+                if(dist < closestDistance) {
+                    closestInteractable = interactable;
+                    closestDistance = dist;
+                }
+            }
         }
     }
 }
