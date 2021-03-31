@@ -20,7 +20,7 @@ public class Player : MonoBehaviour {
     Controller2D controller;
 
     Interactable closestInteractable;
-    float interactableRadius = 5;
+    float interactableRadius = 2;
 
     public Minecart minecart;
 

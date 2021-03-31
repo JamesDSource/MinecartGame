@@ -41,9 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Minecart
-    uniqueID: 456729699
-    locked: 0
   - name: Player
     uniqueID: 1263777017
+    locked: 0
+  - name: Minecart
+    uniqueID: 456729699
     locked: 0
