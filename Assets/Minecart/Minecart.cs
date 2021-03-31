@@ -8,7 +8,7 @@ public class Minecart : MonoBehaviour {
     Controller2D controller;
     Interactable interactable;
 
-    Vector2 velocity = new Vector2();
+    public Vector2 velocity = new Vector2();
     const float gravity = -14;
     float acceleration = 2.5f;
     float maxMovementSpeed = 6;
@@ -44,6 +44,8 @@ public class Minecart : MonoBehaviour {
         if(controller.collisions.below) {
             velocity.y = 0;
         }
+
+        targetMovementSpeed = 0;
     }
 
     public void Movement() {
