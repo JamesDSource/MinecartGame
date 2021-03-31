@@ -12,7 +12,9 @@ public class Minecart : MonoBehaviour {
     const float gravity = -14;
     float acceleration = 2.5f;
     float maxMovementSpeed = 6;
+    float jumpVelocity = 8;
     float targetMovementSpeed = 0;
+    float jump = 0;
 
     void Start() {
         sprite = GetComponent<SpriteRenderer>();
@@ -22,8 +24,21 @@ public class Minecart : MonoBehaviour {
     }
     
     void Update() {
-        velocity.x = Numbers.Approach(velocity.x, targetMovementSpeed, acceleration*Time.deltaTime);
         velocity.y += gravity*Time.deltaTime;
+
+        if(controller.collisions.below) {
+            if(jump > 0) {
+                velocity.y = jumpVelocity;
+                jump = 0;
+            }
+            else {
+                velocity.x = Numbers.Approach(velocity.x, targetMovementSpeed, acceleration*Time.deltaTime);
+            }
+        }
+        if(jump > 0) {
+            jump -= Time.deltaTime;
+        }
+
         controller.Move(velocity*Time.deltaTime);
 
         if(controller.collisions.below) {
@@ -41,9 +56,14 @@ public class Minecart : MonoBehaviour {
         }
 
         targetMovementSpeed *= maxMovementSpeed;
+    
+        if(Input.GetKeyDown(KeyCode.W)) {
+            jump = 0.5f;
+        }
     }
 
     void InteractedWith(Player player) {
         player.minecart = this;
     }
+
 }

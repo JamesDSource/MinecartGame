@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
     
     const float gravity = -14;
     const float jumpVelocity = 8;
+    float jump = 0;
     Vector2 velocity;
     float moveSpeed = 3;
 
@@ -59,8 +60,16 @@ public class Player : MonoBehaviour {
         velocity.x *= moveSpeed;
         velocity.y += gravity*Time.deltaTime;
 
-        if(Input.GetKeyDown(KeyCode.W) && controller.collisions.below) {
+        if(Input.GetKeyDown(KeyCode.W)) {
+            jump = 0.5f;
+        }
+
+        if(jump > 0 && controller.collisions.below) {
             velocity.y = jumpVelocity;
+            jump = 0;
+        }
+        else if(jump > 0) {
+            jump -= Time.deltaTime;
         }
 
         controller.Move(velocity*Time.deltaTime);
