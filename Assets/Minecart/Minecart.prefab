@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionMask:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 64
   rayCount: {x: 4, y: 4}
 --- !u!114 &4142798425582010051
 MonoBehaviour:

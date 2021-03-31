@@ -10,6 +10,9 @@ public class Minecart : MonoBehaviour {
 
     Vector2 velocity = new Vector2();
     const float gravity = -14;
+    float acceleration = 2.5f;
+    float maxMovementSpeed = 6;
+    float targetMovementSpeed = 0;
 
     void Start() {
         sprite = GetComponent<SpriteRenderer>();
@@ -19,6 +22,7 @@ public class Minecart : MonoBehaviour {
     }
     
     void Update() {
+        velocity.x = Numbers.Approach(velocity.x, targetMovementSpeed, acceleration*Time.deltaTime);
         velocity.y += gravity*Time.deltaTime;
         controller.Move(velocity*Time.deltaTime);
 
@@ -27,7 +31,19 @@ public class Minecart : MonoBehaviour {
         }
     }
 
-    void InteractedWith() {
-        print("Interacted");
+    public void Movement() {
+        targetMovementSpeed = 0;
+        if(Input.GetKey(KeyCode.D)) {
+            targetMovementSpeed += 1;
+        }
+        if(Input.GetKey(KeyCode.A)) {
+            targetMovementSpeed -= 1;
+        }
+
+        targetMovementSpeed *= maxMovementSpeed;
+    }
+
+    void InteractedWith(Player player) {
+        player.minecart = this;
     }
 }

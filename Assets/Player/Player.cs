@@ -4,6 +4,11 @@ using UnityEngine;
 
 [RequireComponent (typeof(Controller2D))]
 public class Player : MonoBehaviour {
+    public enum PlayerState {
+        Free,
+        Minecart
+    }
+    public PlayerState state = PlayerState.Free;
     
     const float gravity = -14;
     const float jumpVelocity = 8;
@@ -15,11 +20,34 @@ public class Player : MonoBehaviour {
     Interactable closestInteractable;
     float interactableRadius = 5;
 
+    public Minecart minecart;
+
     void Start() {
         controller = GetComponent<Controller2D>();
     }
 
     void Update() {
+        switch(state) {
+            case PlayerState.Free:
+                Movement();
+                FindInteractables(); 
+                if(minecart) {
+                    state =  PlayerState.Minecart;
+                }
+                break;
+            case PlayerState.Minecart:
+                if(!minecart) {
+                    state = PlayerState.Free;
+                }
+
+                minecart.Movement();
+                Vector3 minecartPos = minecart.transform.position;
+                transform.position = new Vector3(minecartPos.x, minecartPos.y + 0.5f, minecartPos.z);
+                break;
+        }     
+    }
+
+    void Movement() {
         velocity.x = 0;
         if(Input.GetKey(KeyCode.D)) {
             velocity.x += 1;
@@ -40,11 +68,6 @@ public class Player : MonoBehaviour {
         if(controller.collisions.above || controller.collisions.below) {
             velocity.y = 0;
         }
-
-        FindInteractables(); 
-        if(closestInteractable && Input.GetKeyDown(KeyCode.Space)) {
-            closestInteractable.interactedWith();
-        }      
     }
 
     void FindInteractables() {
@@ -64,5 +87,9 @@ public class Player : MonoBehaviour {
                 }
             }
         }
+        if(closestInteractable && Input.GetKeyDown(KeyCode.Space)) {
+            closestInteractable.interactedWith(this);
+        }
     }
+
 }
