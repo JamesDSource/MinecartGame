@@ -58,7 +58,7 @@ public class Player : MonoBehaviour {
 
     void Movement() {
         if(controller.collisions.below) {
-            momentum = Numbers.Approach(momentum, 0, 5f*Time.deltaTime);
+            momentum = Numbers.Approach(momentum, 0, 8f*Time.deltaTime);
         }
 
         velocity.x = 0;
