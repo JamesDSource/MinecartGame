@@ -18,6 +18,6 @@ public class PickAxe : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }
