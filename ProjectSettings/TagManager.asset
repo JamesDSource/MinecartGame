@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Enviroment
   - Minecart
-  - 
+  - Pick Axe
   - 
   - 
   - 
@@ -52,4 +52,7 @@ TagManager:
     locked: 0
   - name: Rail Helper
     uniqueID: 1712061213
+    locked: 0
+  - name: Pick Axe
+    uniqueID: 2874283443
     locked: 0

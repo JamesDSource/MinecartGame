@@ -145,6 +145,7 @@ MonoBehaviour:
   railController: {fileID: 0}
   tracksHeld: 0
   minecart: {fileID: 0}
+  pickAxe: {fileID: 3767933244343917930, guid: df6c95a20bc7bdc4ca7e2f8703444a28, type: 3}
 --- !u!50 &9065520006441966110
 Rigidbody2D:
   serializedVersion: 4

@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
     public enum PlayerState {
         Free,
         Minecart,
+        Carry,
         Dead
     }
     PlayerState state = PlayerState.Free;
@@ -29,6 +30,8 @@ public class Player : MonoBehaviour {
 
     public Minecart minecart;
 
+    [SerializeField] GameObject pickAxe;
+
     void Start() {
         controller = GetComponent<Controller2D>();
     }
@@ -39,13 +42,15 @@ public class Player : MonoBehaviour {
             case PlayerState.Free:
                 Movement();
                 FindInteractables();
-                BuildingTracks(); 
+                BuildingTracks();
+                ThrowPickAxe();
                 if(minecart) {
                     state =  PlayerState.Minecart;
                 }
                 break;
             case PlayerState.Minecart:
                 BuildingTracks();
+                ThrowPickAxe();
                 if(!minecart) {
                     state = PlayerState.Free;
                     break;
@@ -60,6 +65,10 @@ public class Player : MonoBehaviour {
                     momentum = minecart.velocity.x;
                     minecart = null;
                 }
+                break;
+            case PlayerState.Carry:
+                Movement();
+                BuildingTracks();
                 break;
         }     
     }
@@ -138,6 +147,14 @@ public class Player : MonoBehaviour {
 
             if(building) {
                 railController.GetInputs(ref tracksHeld);
+            }
+        }
+    }
+
+    void ThrowPickAxe() {
+        if(!building) {
+            if(Input.GetMouseButtonUp(0)) {
+                GameObject newGO = Instantiate(pickAxe, transform.position, transform.rotation);
             }
         }
     }

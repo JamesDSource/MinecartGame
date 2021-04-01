@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 372735789293701889}
   - component: {fileID: 2460169188429617305}
   - component: {fileID: 4521227680594783335}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RailGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2883459054128936032}
   - component: {fileID: 343636724929152958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Helper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
