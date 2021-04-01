@@ -29,12 +29,28 @@ public class RailController : MonoBehaviour {
         }
     }
 
-    public void GetInputs() {
+    public void GetInputs(ref int tracksHeld) {
         mouseWorldPoint = cam.ScreenToWorldPoint(Input.mousePosition);
         mousePos = new Vector3Int(Mathf.FloorToInt(mouseWorldPoint.x), Mathf.FloorToInt(mouseWorldPoint.y), 0);
         
-        if(Input.GetMouseButtonDown(0)) {
+        tileIndex += Mathf.FloorToInt(Input.mouseScrollDelta.y);
+        if(tileIndex < 0) {
+            tileIndex = tileBase.Count - 1;
+        }
+        else if(tileIndex >= tileBase.Count) {
+            tileIndex = 0;
+        }
+
+        if((tracksHeld > 0 || tilemap.GetTile(mousePos)) && Input.GetMouseButtonDown(0)) {
+            if(!tilemap.GetTile(mousePos)) {
+                tracksHeld--;
+            }
             tilemap.SetTile(mousePos, tileBase[tileIndex]);
+        }
+        
+        if(Input.GetMouseButtonDown(1) && tilemap.GetTile(mousePos)) {
+            tilemap.SetTile(mousePos, null);
+            tracksHeld++;
         }
 
         drawHelper = true;

@@ -41,9 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Rails
+    uniqueID: 1681460311
+    locked: 0
   - name: Player
     uniqueID: 1263777017
     locked: 0
   - name: Minecart
     uniqueID: 456729699
+    locked: 0
+  - name: Rail Helper
+    uniqueID: 1712061213
     locked: 0
