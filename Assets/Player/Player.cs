@@ -25,7 +25,7 @@ public class Player : MonoBehaviour {
     float interactableRadius = 2;
 
     [SerializeField] RailController railController;
-    int tracksHeld = 0;
+    public int tracksHeld = 0;
 
     public Minecart minecart;
 
