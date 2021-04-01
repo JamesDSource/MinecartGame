@@ -162,7 +162,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 64
-  rayCount: {x: 4, y: 4}
+  rayCount: {x: 8, y: 8}
 --- !u!114 &4142798425582010051
 MonoBehaviour:
   m_ObjectHideFlags: 0

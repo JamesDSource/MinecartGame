@@ -128,7 +128,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 64
-  rayCount: {x: 4, y: 4}
+  rayCount: {x: 10, y: 10}
 --- !u!114 &917170306339657740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9806e7ae15dd546bdb5aea8873e9ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
+  railController: {fileID: 0}
   minecart: {fileID: 0}
 --- !u!50 &9065520006441966110
 Rigidbody2D:

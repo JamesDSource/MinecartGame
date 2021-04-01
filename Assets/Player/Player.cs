@@ -6,10 +6,12 @@ using UnityEngine;
 public class Player : MonoBehaviour {
     public enum PlayerState {
         Free,
-        Minecart
+        Minecart,
+        Dead
     }
-    public PlayerState state = PlayerState.Free;
-    
+    PlayerState state = PlayerState.Free;
+    bool building = false;
+
     const float gravity = -14;
     const float jumpVelocity = 8;
     float jump = 0;
@@ -22,6 +24,8 @@ public class Player : MonoBehaviour {
     Interactable closestInteractable;
     float interactableRadius = 2;
 
+    [SerializeField] RailController railController;
+
     public Minecart minecart;
 
     void Start() {
@@ -29,15 +33,18 @@ public class Player : MonoBehaviour {
     }
 
     void Update() {
+        // State machine
         switch(state) {
             case PlayerState.Free:
                 Movement();
-                FindInteractables(); 
+                FindInteractables();
+                BuildingTracks(); 
                 if(minecart) {
                     state =  PlayerState.Minecart;
                 }
                 break;
             case PlayerState.Minecart:
+                BuildingTracks();
                 if(!minecart) {
                     state = PlayerState.Free;
                     break;
@@ -116,6 +123,21 @@ public class Player : MonoBehaviour {
         }
         if(closestInteractable && Input.GetKeyDown(KeyCode.Space)) {
             closestInteractable.interactedWith(this);
+        }
+    }
+
+    void BuildingTracks() {
+        if(!railController) {
+            print("Rail controller not set");
+        }
+        else {
+            if(Input.GetKeyDown(KeyCode.Tab)) {
+                building = !building;
+            }
+
+            if(building) {
+                railController.GetInputs();
+            }
         }
     }
 
