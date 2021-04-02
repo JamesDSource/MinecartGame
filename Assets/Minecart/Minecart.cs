@@ -45,6 +45,13 @@ public class Minecart : MonoBehaviour {
             velocity.y = 0;
         }
 
+        if(velocity.x > 0 && controller.collisions.right) {
+            velocity.x = 0;
+        }
+        else if(velocity.x < 0 && controller.collisions.left) {
+            velocity.x = 0;
+        }
+
         targetMovementSpeed = 0;
     }
 
@@ -67,5 +74,4 @@ public class Minecart : MonoBehaviour {
     void InteractedWith(Player player) {
         player.minecart = this;
     }
-
 }

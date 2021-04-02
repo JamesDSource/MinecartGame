@@ -6,6 +6,8 @@ using UnityEngine.Tilemaps;
 public class RailController : MonoBehaviour {
     [SerializeField] Camera cam;
     [SerializeField] Tilemap tilemap;
+    [SerializeField] ITilemap iTilemap;
+
     [SerializeField] Vector2Int tileDimensions;
 
     public enum TileType {
@@ -41,6 +43,7 @@ public class RailController : MonoBehaviour {
     TileType currentTileType = TileType.Straight;
 
     bool drawHelper = false;
+    bool canPlace = false;
     Vector3Int mousePos;
     Vector3 mouseWorldPoint;
     
@@ -98,6 +101,14 @@ public class RailController : MonoBehaviour {
             }
             helper.transform.position = mousePos;
             helper.transform.Translate(new Vector3(0.5f, 0.5f, 0));
+
+            if(canPlace) {
+                helper.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+            }
+            else {
+                helper.color = new Color(1.0f, 0, 0, 0.5f);
+            }
+
             drawHelper = false;
         }
         else {
@@ -174,6 +185,8 @@ public class RailController : MonoBehaviour {
     }
 
     public void GetInputs(ref int tracksHeld) {
+        canPlace = true;
+
         mouseWorldPoint = cam.ScreenToWorldPoint(Input.mousePosition);
         mousePos = new Vector3Int(Mathf.FloorToInt(mouseWorldPoint.x), Mathf.FloorToInt(mouseWorldPoint.y), 0);
         
@@ -187,12 +200,14 @@ public class RailController : MonoBehaviour {
         currentTileType = tileTypes[tileIndex];
         
         if(InRange(mousePos)) {
-            if((tracksHeld > 0 || HasTile(mousePos)) && Input.GetMouseButtonDown(0)) {
-                if(!HasTile(mousePos)) {
-                    tracksHeld--;
-                }
+            if(Physics2D.OverlapBox(mousePos + (currentTileType == TileType.Straight ? new Vector3(0, 1, 0) : new Vector3()) + new Vector3(0.5f, 0.5f, 0), new Vector2(0.9f, 0.9f), 0)) {
+                canPlace = false;
+            }
+
+            if(tracksHeld > 0 && Input.GetMouseButtonDown(0) && canPlace) {
                 tileGrid[mousePos.x, mousePos.y] = currentTileType;
                 UpdateTile(mousePos, true);
+                tracksHeld--;
                 
             }
             
@@ -201,6 +216,9 @@ public class RailController : MonoBehaviour {
                 UpdateTile(mousePos, true);
                 tracksHeld++;
             }
+        }
+        else {
+            canPlace = false;
         }
         drawHelper = true;
     }
