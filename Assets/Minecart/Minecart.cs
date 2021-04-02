@@ -4,6 +4,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer), typeof(Controller2D), typeof(Interactable))]
 public class Minecart : MonoBehaviour {
+    [SerializeField] LayerMask railMask;
+    RaycastHit2D onRail;
     SpriteRenderer sprite;
     Controller2D controller;
     Interactable interactable;
@@ -11,7 +13,10 @@ public class Minecart : MonoBehaviour {
     public Vector2 velocity = new Vector2();
     const float gravity = -14;
     float acceleration = 2.5f;
+    float offRailsAcceleration = 0.5f;
+    float offRailsDeceleration = 4f;
     float maxMovementSpeed = 6;
+    float offRailsMaxMovementSpeed = 2;
     float jumpVelocity = 8;
     float targetMovementSpeed = 0;
     float jump = 0;
@@ -24,6 +29,7 @@ public class Minecart : MonoBehaviour {
     }
     
     void Update() {
+        onRail = Physics2D.Raycast(transform.position, new Vector2(0, -1), 1, railMask);
         velocity.y += gravity*Time.deltaTime;
 
         if(controller.collisions.below) {
@@ -32,7 +38,15 @@ public class Minecart : MonoBehaviour {
                 jump = 0;
             }
             else {
-                velocity.x = Numbers.Approach(velocity.x, targetMovementSpeed, acceleration*Time.deltaTime);
+                float acc;
+                if(Mathf.Abs(targetMovementSpeed) < Mathf.Abs(velocity.x) || Mathf.Sign(targetMovementSpeed) != Mathf.Sign(velocity.x)) {
+                    acc = onRail ? acceleration : offRailsDeceleration;
+                }
+                else {
+                    acc = onRail ? acceleration : offRailsAcceleration;
+                }
+
+                velocity.x = Numbers.Approach(velocity.x, targetMovementSpeed, acc*Time.deltaTime);
             }
         }
         if(jump > 0) {
@@ -64,7 +78,7 @@ public class Minecart : MonoBehaviour {
             targetMovementSpeed -= 1;
         }
 
-        targetMovementSpeed *= maxMovementSpeed;
+        targetMovementSpeed *= onRail ? maxMovementSpeed : offRailsMaxMovementSpeed;
     
         if(Input.GetKeyDown(KeyCode.W)) {
             jump = 0.5f;
