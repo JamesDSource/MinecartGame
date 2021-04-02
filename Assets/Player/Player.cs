@@ -4,6 +4,8 @@ using UnityEngine;
 
 [RequireComponent (typeof(Controller2D))]
 public class Player : MonoBehaviour {
+    [SerializeField] Camera cam;
+
     public enum PlayerState {
         Free,
         Minecart,
@@ -154,7 +156,11 @@ public class Player : MonoBehaviour {
     void ThrowPickAxe() {
         if(!building) {
             if(Input.GetMouseButtonUp(0)) {
-                GameObject newGO = Instantiate(pickAxe, transform.position, transform.rotation);
+                Vector3 spawnPos = transform.position + new Vector3(0, 0.25f, 0);
+                GameObject newGO = Instantiate(pickAxe, spawnPos, new Quaternion());
+                PickAxe pickComp = newGO.GetComponent<PickAxe>();
+                Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+                pickComp.Launch((mousePos - spawnPos).normalized);
             }
         }
     }
