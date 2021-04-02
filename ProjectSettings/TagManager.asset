@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Rock
+    uniqueID: 2403243635
+    locked: 0
   - name: Rails
     uniqueID: 1681460311
     locked: 0
