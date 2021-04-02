@@ -15,11 +15,11 @@ L:/Unity/MinecartGemGame
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57631
+62969
 Successfully changed project path to: L:/Unity/MinecartGemGame
 L:/Unity/MinecartGemGame
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 61.74 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 56.88 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.1f1 (77a89f25062f)
 [Subsystems] Discovering subsystems at path L:/Unity Editors/2020.3.1f1/Editor/Data/Resources/UnitySubsystems
@@ -36,80 +36,320 @@ Initialize mono
 Mono path[0] = 'L:/Unity Editors/2020.3.1f1/Editor/Data/Managed'
 Mono path[1] = 'L:/Unity Editors/2020.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'L:/Unity Editors/2020.3.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56096
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56348
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: L:/Unity Editors/2020.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001375 seconds.
+Registered in 0.001367 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 57.83 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 59.69 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.287 seconds
+- Completed reload, in  1.279 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001539 seconds.
+Registered in 0.001362 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 55.50 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 60.31 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.231 seconds
+- Completed reload, in  1.279 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.86 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2727 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 121.8 MB.
-System memory in use after: 122.0 MB.
+Unloading 2764 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 123.7 MB.
+System memory in use after: 123.9 MB.
 
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3171.
-Total: 3.434600 ms (FindLiveObjects: 0.504600 ms CreateObjectMapping: 0.165600 ms MarkObjects: 2.625600 ms  DeleteObjects: 0.137500 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Pipeline.asset
-  artifactKey: Guid(b264eca160b0569489cf9d3ffa121f72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pipeline.asset using Guid(b264eca160b0569489cf9d3ffa121f72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '399fab8008fe8aa2534a601c06ed619c') in 0.056065 seconds
-  Import took 0.061297 seconds .
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3212.
+Total: 3.494800 ms (FindLiveObjects: 0.618200 ms CreateObjectMapping: 0.219900 ms MarkObjects: 2.551800 ms  DeleteObjects: 0.103000 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000301 seconds.
-  path: Assets/kongtext.ttf
-  artifactKey: Guid(58db404779b62ba4ea4c85821e957a6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/kongtext.ttf using Guid(58db404779b62ba4ea4c85821e957a6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b5f89ae08fa44c80ea4ec877642f7a5') in 0.390661 seconds
-  Import took 0.395831 seconds .
+  path: Packages/com.unity.2d.tilemap.extras/package.json
+  artifactKey: Guid(a9f15b7c9363d9944a7d69248fd279ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.tilemap.extras/package.json using Guid(a9f15b7c9363d9944a7d69248fd279ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1e308967a52ec38cb899b253ce5e930') in 0.091507 seconds
+  Import took 0.097977 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000198 seconds.
-  path: Assets/Rendering2D.asset
-  artifactKey: Guid(f065bdb9d69fde14d8a1feba1a6ad51c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Rendering2D.asset using Guid(f065bdb9d69fde14d8a1feba1a6ad51c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a54509a0bac25e3b8cc2d624954a1f1b') in 0.009764 seconds
-  Import took 0.014132 seconds .
+  Time since last request: 24.014351 seconds.
+  path: Assets/Rails/RailAutoTile.asset
+  artifactKey: Guid(e43d21b14b40311428bc0b754564f285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailAutoTile.asset using Guid(e43d21b14b40311428bc0b754564f285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd582364740e0b91bf9e0cfb824de46e6') in 0.021976 seconds
+  Import took 0.027076 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000231 seconds.
-  path: Assets/CMvCamera.prefab
-  artifactKey: Guid(826b0e2a116894447901db88bb2a2f90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CMvCamera.prefab using Guid(826b0e2a116894447901db88bb2a2f90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '867e76faa395413258a6bde429cc779c') in 0.025768 seconds
-  Import took 0.030043 seconds .
+  Time since last request: 19.329646 seconds.
+  path: Assets/Enemies/Bat/BatFly.png
+  artifactKey: Guid(51a73d895a32cf14d8f916e3d050583d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemies/Bat/BatFly.png using Guid(51a73d895a32cf14d8f916e3d050583d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2867d42749469c884c762df9bfb3534f') in 0.180790 seconds
+  Import took 0.185837 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Enemies/Bat/BatIdle.png
+  artifactKey: Guid(429ebb53e5b76b6458f4d08196bb9175) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemies/Bat/BatIdle.png using Guid(429ebb53e5b76b6458f4d08196bb9175) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd852af891ee40bd10b21e86dbcec717c') in 0.051419 seconds
+  Import took 0.056401 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Enemies/Bat/BatFly.png
+  artifactKey: Guid(51a73d895a32cf14d8f916e3d050583d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemies/Bat/BatFly.png using Guid(51a73d895a32cf14d8f916e3d050583d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2867d42749469c884c762df9bfb3534f') in 0.008984 seconds
+  Import took 0.013931 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/UI/HealthBar.png
+  artifactKey: Guid(efe0ec1b352d10547b5bba7ab2dd6e69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/HealthBar.png using Guid(efe0ec1b352d10547b5bba7ab2dd6e69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49404419f78e5aca46ba220ffb320f2b') in 0.044680 seconds
+  Import took 0.049203 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.684115 seconds.
+  path: Assets/Rails/Rails.prefab
+  artifactKey: Guid(2547f3a1d0d29fd4899b9fa9b24a1255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/Rails.prefab using Guid(2547f3a1d0d29fd4899b9fa9b24a1255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76599e04bd1a6bb070410e81c45e7da1') in 0.013210 seconds
+  Import took 0.018238 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 550.755487 seconds.
+  path: Assets/Rails/New Advanced Rule Override Tile.asset
+  artifactKey: Guid(cae098e400a210f49ad45c4ddec23084) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/New Advanced Rule Override Tile.asset using Guid(cae098e400a210f49ad45c4ddec23084) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '132c5ccbfe6ecec9edea7e74def34868') in 0.013678 seconds
+  Import took 0.019039 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 72.450063 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '709e3741111d9aa262b3af8f7c5bec01') in 0.012122 seconds
+  Import took 0.017360 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.288786 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfa5907d7ec3bb27662378085ea3370f') in 0.004952 seconds
+  Import took 0.009936 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001427 seconds.
+Registered in 0.001393 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.131 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.6 MB.
+System memory in use after: 120.8 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3226.
+Total: 4.627700 ms (FindLiveObjects: 0.531900 ms CreateObjectMapping: 0.130900 ms MarkObjects: 3.931900 ms  DeleteObjects: 0.031700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 35.875217 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6981f04275c0cc7b2665e7727b35834f') in 0.046796 seconds
+  Import took 0.053588 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001340 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.130 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.7 MB.
+System memory in use after: 120.9 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3230.
+Total: 4.544500 ms (FindLiveObjects: 0.730900 ms CreateObjectMapping: 0.195300 ms MarkObjects: 3.581200 ms  DeleteObjects: 0.034600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 34.353118 seconds.
+  path: Assets/Rails/RailAutoTile.asset
+  artifactKey: Guid(e43d21b14b40311428bc0b754564f285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailAutoTile.asset using Guid(e43d21b14b40311428bc0b754564f285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bde88024f7de3144c5402633137a91a') in 0.066381 seconds
+  Import took 0.071552 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.437049 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff7bc31021343ac0a30b3cdd19741670') in 0.009654 seconds
+  Import took 0.015247 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 75.815378 seconds.
+  path: Assets/Rails/RailController.cs
+  artifactKey: Guid(4a9e6881de506954186a7dbf4e2c98f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailController.cs using Guid(4a9e6881de506954186a7dbf4e2c98f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd860c45ed75098c2baa0d30a7176a60') in 0.014478 seconds
+  Import took 0.019435 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.025579 seconds.
+  path: Assets/Rails/RailController.cs
+  artifactKey: Guid(4a9e6881de506954186a7dbf4e2c98f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailController.cs using Guid(4a9e6881de506954186a7dbf4e2c98f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd860c45ed75098c2baa0d30a7176a60') in 0.003082 seconds
+  Import took 0.007625 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001444 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.157 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.95 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.7 MB.
+System memory in use after: 120.9 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3237.
+Total: 5.114800 ms (FindLiveObjects: 0.588800 ms CreateObjectMapping: 0.122700 ms MarkObjects: 4.380400 ms  DeleteObjects: 0.021400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 45.745426 seconds.
+  path: Assets/Rails/RailController.cs
+  artifactKey: Guid(4a9e6881de506954186a7dbf4e2c98f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailController.cs using Guid(4a9e6881de506954186a7dbf4e2c98f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36e13441141645aa7777c3336f69f412') in 0.008274 seconds
+  Import took 0.013263 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001402 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.125 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.7 MB.
+System memory in use after: 120.9 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3241.
+Total: 5.344300 ms (FindLiveObjects: 0.608600 ms CreateObjectMapping: 0.146800 ms MarkObjects: 4.559000 ms  DeleteObjects: 0.027700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 52.040214 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afbf0028693970ebaec479d7e66f4643') in 0.043284 seconds
+  Import took 0.051794 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.293812 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc68347b1e62334e4430fd0e43d16e44') in 0.010047 seconds
+  Import took 0.016079 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.940748 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04dc93a081cc3723bc2315705eed3b72') in 0.004311 seconds
+  Import took 0.017626 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001445 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.113 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.7 MB.
+System memory in use after: 121.0 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3245.
+Total: 5.155500 ms (FindLiveObjects: 0.663100 ms CreateObjectMapping: 0.156700 ms MarkObjects: 4.310600 ms  DeleteObjects: 0.022300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001344 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
@@ -118,38 +358,22 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.175 seconds
+- Completed reload, in  1.153 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2617 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 121.6 MB.
-System memory in use after: 121.8 MB.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.7 MB.
+System memory in use after: 121.0 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3259.
-Total: 4.499800 ms (FindLiveObjects: 0.528600 ms CreateObjectMapping: 0.130900 ms MarkObjects: 3.804100 ms  DeleteObjects: 0.033800 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 17.607475 seconds.
-  path: Assets/Scenes/SampleScene.unity
-  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a69894e88b691ef18e886e162301e3c') in 0.022531 seconds
-  Import took 0.027529 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.010544 seconds.
-  path: Assets/Scenes/SampleScene.unity
-  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a69894e88b691ef18e886e162301e3c') in 0.002874 seconds
-  Import took 0.007679 seconds .
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3249.
+Total: 4.382500 ms (FindLiveObjects: 0.691900 ms CreateObjectMapping: 0.111900 ms MarkObjects: 3.551300 ms  DeleteObjects: 0.025400 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001368 seconds.
+Registered in 0.001371 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
@@ -158,25 +382,321 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.192 seconds
+- Completed reload, in  1.129 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.04 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 121.6 MB.
-System memory in use after: 121.9 MB.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 121.1 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3263.
-Total: 4.893400 ms (FindLiveObjects: 0.601100 ms CreateObjectMapping: 0.137500 ms MarkObjects: 4.115300 ms  DeleteObjects: 0.037800 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3253.
+Total: 4.407200 ms (FindLiveObjects: 0.656900 ms CreateObjectMapping: 0.138700 ms MarkObjects: 3.565900 ms  DeleteObjects: 0.039100 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001396 seconds.
+Registered in 0.001500 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.61 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.303 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 121.1 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3257.
+Total: 9.956500 ms (FindLiveObjects: 0.815900 ms CreateObjectMapping: 0.191100 ms MarkObjects: 8.897900 ms  DeleteObjects: 0.048100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 393.494184 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72fc1e54c6720212efc0bf313cde2c7d') in 0.051893 seconds
+  Import took 0.059030 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.398621 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcb005e270d1884cb1f8f2be2f7a8c50') in 0.006267 seconds
+  Import took 0.011215 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001367 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.109 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.61 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 121.1 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3261.
+Total: 4.973400 ms (FindLiveObjects: 0.583200 ms CreateObjectMapping: 0.141900 ms MarkObjects: 4.215800 ms  DeleteObjects: 0.029700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001323 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.132 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 121.1 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3265.
+Total: 3.754700 ms (FindLiveObjects: 0.606900 ms CreateObjectMapping: 0.140900 ms MarkObjects: 2.984300 ms  DeleteObjects: 0.020700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 87.365497 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6b8095253c03868d0471ab0e31edd86') in 0.041328 seconds
+  Import took 0.048572 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 95.088372 seconds.
+  path: Assets/Rails/Rails.prefab
+  artifactKey: Guid(2547f3a1d0d29fd4899b9fa9b24a1255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/Rails.prefab using Guid(2547f3a1d0d29fd4899b9fa9b24a1255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '558365c3fe405691d8948d2ef888657c') in 0.005901 seconds
+  Import took 0.011106 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000343 seconds.
+  path: Assets/Rails/RailTiles_6.asset
+  artifactKey: Guid(7a39f8a4fe5076a44a9bf1f5585f0422) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailTiles_6.asset using Guid(7a39f8a4fe5076a44a9bf1f5585f0422) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c2f85fec3c3d30b1d7e4bae390eb7cd') in 0.043730 seconds
+  Import took 0.048836 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Rails/RailTiles_1.asset
+  artifactKey: Guid(63ac03afdeaf6c649898add1de1ae646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailTiles_1.asset using Guid(63ac03afdeaf6c649898add1de1ae646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4766edbbcf8b351e5d1a58f1ad4aac90') in 0.020603 seconds
+  Import took 0.025596 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/Rails/RailTiles_3.asset
+  artifactKey: Guid(d2fc4d365a2a076439e5580828d61353) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailTiles_3.asset using Guid(d2fc4d365a2a076439e5580828d61353) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68c45ff656b81f772db361a8ef8b0309') in 0.019700 seconds
+  Import took 0.024641 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Rails/RailTiles_7.asset
+  artifactKey: Guid(e60af5c3f83604749bf23a921045dcf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailTiles_7.asset using Guid(e60af5c3f83604749bf23a921045dcf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a590808896ec4ee3c8c4dd518b9c1c44') in 0.018973 seconds
+  Import took 0.023884 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Rails/RailTiles_4.asset
+  artifactKey: Guid(dd498836f0224d7479ea7e6cca814bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailTiles_4.asset using Guid(dd498836f0224d7479ea7e6cca814bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1018dc173ae2970448f7c3ae0643db01') in 0.020156 seconds
+  Import took 0.024756 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000281 seconds.
+  path: Assets/Rails/RailTiles_0.asset
+  artifactKey: Guid(11546531525d2434b88d2b615896d056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailTiles_0.asset using Guid(11546531525d2434b88d2b615896d056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63d491d4aeff0552599a0a5808a9d692') in 0.023781 seconds
+  Import took 0.029112 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Rails/RailTiles_5.asset
+  artifactKey: Guid(f9404e7dfb6148b40a5a861f7718a955) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailTiles_5.asset using Guid(f9404e7dfb6148b40a5a861f7718a955) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e88592a6a6723cc54582b271e1364e0') in 0.019632 seconds
+  Import took 0.024632 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Rails/RailTiles_2.asset
+  artifactKey: Guid(92333baaa10bad94d99192b3d76c6278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailTiles_2.asset using Guid(92333baaa10bad94d99192b3d76c6278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cfebcbc9955e4077abbe2a494765971') in 0.018696 seconds
+  Import took 0.023831 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002003 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.132 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 121.1 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3270.
+Total: 4.680200 ms (FindLiveObjects: 0.435100 ms CreateObjectMapping: 0.086600 ms MarkObjects: 4.127100 ms  DeleteObjects: 0.029000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1820.582769 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5adbb49c7020a921e6978fd40dd67528') in 0.048579 seconds
+  Import took 0.055128 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.216244 seconds.
+  path: Assets/Rails/RailTile.cs
+  artifactKey: Guid(ee7ca0c2b1b0f6b49a7bbb3b3152c548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailTile.cs using Guid(ee7ca0c2b1b0f6b49a7bbb3b3152c548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '356bcce47d9017e1b9d00c4502670706') in 0.009906 seconds
+  Import took 0.016110 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001465 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.141 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.95 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2652 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 121.1 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3275.
+Total: 4.520100 ms (FindLiveObjects: 0.485200 ms CreateObjectMapping: 0.125000 ms MarkObjects: 3.878600 ms  DeleteObjects: 0.029600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001351 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.158 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2652 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 121.2 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3279.
+Total: 4.433500 ms (FindLiveObjects: 0.540900 ms CreateObjectMapping: 0.125700 ms MarkObjects: 3.731700 ms  DeleteObjects: 0.033200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 284.922392 seconds.
+  path: Assets/Rails/RailTile.cs
+  artifactKey: Guid(ee7ca0c2b1b0f6b49a7bbb3b3152c548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailTile.cs using Guid(ee7ca0c2b1b0f6b49a7bbb3b3152c548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5be2418aa16619792b69ee73f0049573') in 0.007785 seconds
+  Import took 0.012797 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/Rails/RailTile.cs
+  artifactKey: Guid(ee7ca0c2b1b0f6b49a7bbb3b3152c548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailTile.cs using Guid(ee7ca0c2b1b0f6b49a7bbb3b3152c548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5be2418aa16619792b69ee73f0049573') in 0.003146 seconds
+  Import took 0.007962 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001327 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.51 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.128 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.86 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 121.1 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 3282.
+Total: 3.914900 ms (FindLiveObjects: 0.520800 ms CreateObjectMapping: 0.085000 ms MarkObjects: 3.276700 ms  DeleteObjects: 0.029200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001347 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
@@ -185,212 +705,244 @@ Mono: successfully reloaded assembly
 - Completed reload, in  1.148 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.03 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 121.5 MB.
-System memory in use after: 121.7 MB.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 121.2 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3267.
-Total: 4.287600 ms (FindLiveObjects: 0.483300 ms CreateObjectMapping: 0.084100 ms MarkObjects: 3.694600 ms  DeleteObjects: 0.023700 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3286.
+Total: 3.176100 ms (FindLiveObjects: 0.426200 ms CreateObjectMapping: 0.093400 ms MarkObjects: 2.633900 ms  DeleteObjects: 0.020700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001327 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.137 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 121.2 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3290.
+Total: 4.880900 ms (FindLiveObjects: 0.560300 ms CreateObjectMapping: 0.152000 ms MarkObjects: 4.139400 ms  DeleteObjects: 0.027700 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 21.215735 seconds.
+  Time since last request: 510.479317 seconds.
   path: Assets/Rails/RailGrid.prefab
   artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9499dd29994b113f6912a7de44124c62') in 0.043753 seconds
-  Import took 0.049895 seconds .
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a848d25bf2b704bf84ed17de8209e141') in 0.038098 seconds
+  Import took 0.044569 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000290 seconds.
-  path: Assets/Rails/RailTiles.png
-  artifactKey: Guid(621b0670cb0841f4985d83c76490e80d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Rails/RailTiles.png using Guid(621b0670cb0841f4985d83c76490e80d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '971595e373ecd1ac07043afae82c1343') in 0.063981 seconds
-  Import took 0.068892 seconds .
+  Time since last request: 7.149420 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5ed0bdb59f8db9b7d944de1066a9ad2') in 0.005193 seconds
+  Import took 0.010273 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000223 seconds.
-  path: Assets/Rails/RailTiles_1.asset
-  artifactKey: Guid(63ac03afdeaf6c649898add1de1ae646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Rails/RailTiles_1.asset using Guid(63ac03afdeaf6c649898add1de1ae646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18653a022f4fe30f22eed8d11e60922d') in 0.029235 seconds
-  Import took 0.033782 seconds .
+  Time since last request: 1.610711 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f35578a4a0cb29794a965659fa8b54c0') in 0.005117 seconds
+  Import took 0.010190 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000269 seconds.
-  path: Assets/Rails/Rails.prefab
-  artifactKey: Guid(2547f3a1d0d29fd4899b9fa9b24a1255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Rails/Rails.prefab using Guid(2547f3a1d0d29fd4899b9fa9b24a1255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f564fa50520d6b4ee2bbfc2258efdec3') in 0.010337 seconds
-  Import took 0.014912 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000234 seconds.
-  path: Assets/Rails/RailTiles_0.asset
-  artifactKey: Guid(11546531525d2434b88d2b615896d056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Rails/RailTiles_0.asset using Guid(11546531525d2434b88d2b615896d056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33401acc01f74a9b06d6ae86445700a4') in 0.016498 seconds
-  Import took 0.021513 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000215 seconds.
-  path: Assets/Rails/RailTiles_2.asset
-  artifactKey: Guid(92333baaa10bad94d99192b3d76c6278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Rails/RailTiles_2.asset using Guid(92333baaa10bad94d99192b3d76c6278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c032f42cc5c158b2057336662c14393e') in 0.016807 seconds
-  Import took 0.021926 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.972085 seconds.
-  path: Assets/Player/Player.prefab
-  artifactKey: Guid(9e6610374e8bd584da4240883088f572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/Player.prefab using Guid(9e6610374e8bd584da4240883088f572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8649384b28700d6667dd9c0bb4a739b0') in 0.175154 seconds
-  Import took 0.180548 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.336591 seconds.
-  path: Assets/Minecart/Minecart.png
-  artifactKey: Guid(673fd314164eede4e9a9d8e668019fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Minecart/Minecart.png using Guid(673fd314164eede4e9a9d8e668019fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9df97ff0bd6fde3ac10f8a710e7902dc') in 0.018848 seconds
-  Import took 0.023969 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000190 seconds.
-  path: Assets/Minecart/Minecart.prefab
-  artifactKey: Guid(71a3e6ca49281094780cb6a8893c1964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Minecart/Minecart.prefab using Guid(71a3e6ca49281094780cb6a8893c1964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '316560cc31b790635a67cc851ff130c6') in 0.015204 seconds
-  Import took 0.019810 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.989337 seconds.
-  path: Assets/Gems/DiamondBlue.png
-  artifactKey: Guid(3ab9357250cb0cb45849d1fa5d4990cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gems/DiamondBlue.png using Guid(3ab9357250cb0cb45849d1fa5d4990cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52997b7765b6fe8c7f03305fa408d403') in 0.019751 seconds
-  Import took 0.025764 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000527 seconds.
-  path: Assets/Gems/GemTeal.png
-  artifactKey: Guid(daf7e53977e829041a67c2efab2d21f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gems/GemTeal.png using Guid(daf7e53977e829041a67c2efab2d21f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47e533e35f9ba23e2d51014357940f48') in 0.020242 seconds
-  Import took 0.025228 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000282 seconds.
-  path: Assets/Gems/GemLightBlue.png
-  artifactKey: Guid(cc6269bde0ca8dd43810ef089b5cdf54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gems/GemLightBlue.png using Guid(cc6269bde0ca8dd43810ef089b5cdf54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e4d38443d5ec455bd093f3a82d31a56') in 0.021754 seconds
-  Import took 0.026646 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000199 seconds.
-  path: Assets/Gems/DiamondPurple.png
-  artifactKey: Guid(8fcf765ffbf133c42a9334492180681f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gems/DiamondPurple.png using Guid(8fcf765ffbf133c42a9334492180681f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c64686d3b07f006c6298832eafb60e9') in 0.021911 seconds
-  Import took 0.026600 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000181 seconds.
-  path: Assets/Gems/GemPink.png
-  artifactKey: Guid(2d605b6693f3b6c40bbb3771ee7e980f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gems/GemPink.png using Guid(2d605b6693f3b6c40bbb3771ee7e980f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec1a7f0d215b80a0170dbda1ef5238b8') in 0.019109 seconds
-  Import took 0.023826 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.491086 seconds.
-  path: Assets/Player/PickAxe/PickAxe.png
-  artifactKey: Guid(af3a7ca87eeb67045bea214401e037d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/PickAxe/PickAxe.png using Guid(af3a7ca87eeb67045bea214401e037d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4284cd42e6ac5e8fcccb929523ee559b') in 0.019037 seconds
-  Import took 0.023920 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000322 seconds.
-  path: Assets/Player/PickAxe/PickAxe.prefab
-  artifactKey: Guid(df6c95a20bc7bdc4ca7e2f8703444a28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/PickAxe/PickAxe.prefab using Guid(df6c95a20bc7bdc4ca7e2f8703444a28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff8d76988a9cef8f31b23e555a56793a') in 0.014305 seconds
-  Import took 0.019174 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.939201 seconds.
-  path: Assets/Player/PickAxe/PickAxe.cs
-  artifactKey: Guid(f1c931479776b8049b356832514816d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/PickAxe/PickAxe.cs using Guid(f1c931479776b8049b356832514816d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f37137ad5ab19f0f1ed1a681ac256db0') in 0.006872 seconds
-  Import took 0.011708 seconds .
+  Time since last request: 21.186525 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3ad78b930a9b59c2ce411ef60c93a66') in 0.005286 seconds
+  Import took 0.023352 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001890 seconds.
+Registered in 0.001575 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.63 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.181 seconds
+- Completed reload, in  1.191 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.64 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 121.9 MB.
-System memory in use after: 122.1 MB.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 121.2 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3321.
-Total: 3.359700 ms (FindLiveObjects: 0.619100 ms CreateObjectMapping: 0.132900 ms MarkObjects: 2.583700 ms  DeleteObjects: 0.022500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 21.527391 seconds.
-  path: Assets/Player/PickAxe/PickAxe.cs
-  artifactKey: Guid(f1c931479776b8049b356832514816d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/PickAxe/PickAxe.cs using Guid(f1c931479776b8049b356832514816d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6f1ecb4005c3133d5a721388cdfee27') in 0.007061 seconds
-  Import took 0.012023 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.018541 seconds.
-  path: Assets/Player/PickAxe/PickAxe.cs
-  artifactKey: Guid(f1c931479776b8049b356832514816d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/PickAxe/PickAxe.cs using Guid(f1c931479776b8049b356832514816d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6f1ecb4005c3133d5a721388cdfee27') in 0.002983 seconds
-  Import took 0.008046 seconds .
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3294.
+Total: 6.803200 ms (FindLiveObjects: 0.915600 ms CreateObjectMapping: 0.365700 ms MarkObjects: 5.486200 ms  DeleteObjects: 0.033400 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001429 seconds.
+Registered in 0.001339 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.06 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.53 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.182 seconds
+- Completed reload, in  1.196 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.00 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.92 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 121.8 MB.
-System memory in use after: 122.0 MB.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 121.2 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3325.
-Total: 3.444200 ms (FindLiveObjects: 0.478900 ms CreateObjectMapping: 0.087400 ms MarkObjects: 2.854000 ms  DeleteObjects: 0.022100 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3298.
+Total: 5.648900 ms (FindLiveObjects: 0.622100 ms CreateObjectMapping: 0.139300 ms MarkObjects: 4.859200 ms  DeleteObjects: 0.026600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 945.112569 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8e3aeab526c63858a269d3b816d9bfd') in 0.050124 seconds
+  Import took 0.057208 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.719168 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '847f2cfec5ea06233313eae116eab9e2') in 0.006957 seconds
+  Import took 0.012166 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.613819 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a0e4a5a2cb11eb74b443e5e152256b3') in 0.006141 seconds
+  Import took 0.012076 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.688927 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66d7e44e33371f3ea0f595886ee2eaeb') in 0.005515 seconds
+  Import took 0.010972 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.884614 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c956f3a863dacec0415e966c746b53b') in 0.008098 seconds
+  Import took 0.013367 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.323215 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee67294e1843a4aa0136ea68af36af0c') in 0.005642 seconds
+  Import took 0.011848 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.139622 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2314a8335cf0cb8b2fbc93b5a79cb2b') in 0.006631 seconds
+  Import took 0.013405 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.693127 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '680be2ab0c53b11eee6dda54f08ad25c') in 0.006162 seconds
+  Import took 0.012349 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001334 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.154 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2651 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.0 MB.
+System memory in use after: 121.2 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3302.
+Total: 4.324500 ms (FindLiveObjects: 0.558800 ms CreateObjectMapping: 0.118400 ms MarkObjects: 3.622100 ms  DeleteObjects: 0.023300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.150118 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3bdcbbae130cafb1cdf10950fa86a4a') in 0.054162 seconds
+  Import took 0.061370 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.910314 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd50acc2d429780e12406f98c62e0c28') in 0.006312 seconds
+  Import took 0.011522 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.958929 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27b80e09bb5cc96fa03209ad99df6d11') in 0.007466 seconds
+  Import took 0.012666 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.143346 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7968272f36a802cc40219c47ed52179f') in 0.006850 seconds
+  Import took 0.013036 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.412332 seconds.
+  path: Assets/Rails/RailGrid.prefab
+  artifactKey: Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rails/RailGrid.prefab using Guid(e6c8142516da3dd4f931ee70a0c519bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff5824a835e69133b7e25f4f03821f61') in 0.007305 seconds
+  Import took 0.012648 seconds .
 

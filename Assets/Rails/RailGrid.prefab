@@ -281,13 +281,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9e6881de506954186a7dbf4e2c98f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileBase:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   cam: {fileID: 0}
   tilemap: {fileID: 372735788523692134}
+  tileDimensions: {x: 16, y: 16}
+  tileStraightSprite: {fileID: 990039643894092421, guid: 621b0670cb0841f4985d83c76490e80d,
+    type: 3}
+  tileRampLeftSprite: {fileID: -5704035742413289477, guid: 621b0670cb0841f4985d83c76490e80d,
+    type: 3}
+  tileRampRightSprite: {fileID: -3572023516822165404, guid: 621b0670cb0841f4985d83c76490e80d,
+    type: 3}
   helper: {fileID: 343636724929152958}
+  tileSMiddle: {fileID: 11400000, guid: 92333baaa10bad94d99192b3d76c6278, type: 2}
+  tileSLeft: {fileID: 11400000, guid: f9404e7dfb6148b40a5a861f7718a955, type: 2}
+  tileSRight: {fileID: 11400000, guid: 7a39f8a4fe5076a44a9bf1f5585f0422, type: 2}
+  tileSSingle: {fileID: 11400000, guid: e60af5c3f83604749bf23a921045dcf5, type: 2}
+  tileRLeft: {fileID: 11400000, guid: 63ac03afdeaf6c649898add1de1ae646, type: 2}
+  tileRRight: {fileID: 11400000, guid: 11546531525d2434b88d2b615896d056, type: 2}
+  tileCLeft: {fileID: 11400000, guid: d2fc4d365a2a076439e5580828d61353, type: 2}
+  tileCRight: {fileID: 11400000, guid: dd498836f0224d7479ea7e6cca814bcc, type: 2}
 --- !u!1 &2586284011496769494
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,21 @@ TextureImporter:
   - first:
       213: 7394578977980343146
     second: RailTiles_2
+  - first:
+      213: 4705591077713126147
+    second: RailTiles_3
+  - first:
+      213: 8333204849257435768
+    second: RailTiles_4
+  - first:
+      213: -2320007555463958889
+    second: RailTiles_5
+  - first:
+      213: -8382851680480755070
+    second: RailTiles_6
+  - first:
+      213: 990039643894092421
+    second: RailTiles_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,8 +118,8 @@ TextureImporter:
       name: RailTiles_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 32
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -112,9 +127,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
-        - {x: -16, y: 13}
-        - {x: 16, y: 13}
+      - - {x: 16, y: 16}
+        - {x: -16, y: -16}
+        - {x: -16, y: -16}
+        - {x: -7, y: -16}
+        - {x: 16, y: 7}
         - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
@@ -128,8 +145,8 @@ TextureImporter:
       name: RailTiles_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 64
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -137,12 +154,12 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: 16, y: 16}
-        - {x: -16, y: -16}
-        - {x: -16, y: -16}
-        - {x: -13, y: -16}
-        - {x: 16, y: 13}
-        - {x: 16, y: 16}
+      - - {x: -16, y: 16}
+        - {x: -16, y: 7}
+        - {x: 7, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: -16}
+        - {x: -16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: bf7035ba6b137d0b0800000000000000
@@ -155,6 +172,138 @@ TextureImporter:
       name: RailTiles_2
       rect:
         serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: 8}
+        - {x: -16, y: 8}
+        - {x: 16, y: 8}
+        - {x: 16, y: 8}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a63e61ef662de9660800000000000000
+      internalID: 7394578977980343146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RailTiles_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: 8}
+        - {x: -16, y: 8}
+        - {x: -8, y: 16}
+        - {x: -8, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 303a655672e9d4140800000000000000
+      internalID: 4705591077713126147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RailTiles_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 8, y: 16}
+        - {x: 8, y: 16}
+        - {x: 16, y: 8}
+        - {x: 16, y: 8}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8725d80c8ad75a370800000000000000
+      internalID: 8333204849257435768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RailTiles_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: 8}
+        - {x: -16, y: 8}
+        - {x: 16, y: 8}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e29549b6dadcfd0800000000000000
+      internalID: -2320007555463958889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RailTiles_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: 8}
+        - {x: -16, y: 8}
+        - {x: 16, y: 8}
+        - {x: 16, y: 8}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28288249fc02aab80800000000000000
+      internalID: -8382851680480755070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RailTiles_7
+      rect:
+        serializedVersion: 2
         x: 64
         y: 0
         width: 32
@@ -165,15 +314,15 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -16, y: 16}
-        - {x: -16, y: 13}
-        - {x: 13, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: -16}
-        - {x: -16, y: 16}
+        - {x: -16, y: 8}
+        - {x: -16, y: 8}
+        - {x: 16, y: 8}
+        - {x: 16, y: 8}
+        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
-      spriteID: a63e61ef662de9660800000000000000
-      internalID: 7394578977980343146
+      spriteID: 5829cd78fc35dbd00800000000000000
+      internalID: 990039643894092421
       vertices: []
       indices: 
       edges: []
