@@ -46,11 +46,36 @@ public class RailController : MonoBehaviour {
     
     void Start() {
         tileGrid = new TileType[tileDimensions.x, tileDimensions.y];
-        
+        List<Vector3Int> occupiedTiles = new List<Vector3Int>();
+
         for(int i = 0; i < tileGrid.GetLength(0); i++) {
             for(int j = 0; j < tileGrid.GetLength(1); j++) {
+                var tile = tilemap.GetTile(new Vector3Int(i, j, 0));
+                if( tile == tileSMiddle ||
+                    tile == tileSLeft ||
+                    tile == tileSRight ||
+                    tile == tileSSingle) {
+                    tileGrid[i, j] = TileType.Straight;
+                }
+                else if( tile == tileRLeft) {
+                    tileGrid[i, j] = TileType.RampLeft;
+                }
+                else if( tile == tileRRight) {
+                    tileGrid[i, j] = TileType.RampRight;
+                }
+                else {
+                    tileGrid[i, j] = TileType.None;
+                }
 
+                if(tileGrid[i, j] != TileType.None) {
+                    occupiedTiles.Add(new Vector3Int(i, j, 0));
+                }
             }
+        }
+
+        // Updates each tile that is not empty
+        foreach(Vector3Int tilePos in occupiedTiles) {
+            UpdateTile(tilePos, true);
         }
     }
 
@@ -80,8 +105,72 @@ public class RailController : MonoBehaviour {
         }
     }
 
-    void UpdateTile(Vector3Int position, bool updateNeighbors) {
+    bool InRange(Vector3Int position) {
+        return position.x >= 0 && position.x < tileGrid.GetLength(0) && position.y >= 0 && position.y < tileGrid.GetLength(1);
+    }
 
+    TileType GetTileType(Vector3Int position) {
+        if(InRange(position)) {
+            return tileGrid[position.x, position.y];
+        }
+        return TileType.None;
+    }
+    bool HasTile(Vector3Int position) {
+        return GetTileType(position) != TileType.None;
+    }
+
+    void UpdateTile(Vector3Int position, bool updateNeighbors) {
+        if(InRange(position)) {
+            TileType currentType = tileGrid[position.x, position.y];
+            TileBase setTileAs = null;
+            switch(currentType) {
+                case TileType.Straight:
+                    bool rightFrom = GetTileType(position + new Vector3Int(1, 0, 0)) != TileType.None;
+                    bool leftFrom = GetTileType(position + new Vector3Int(-1, 0, 0)) != TileType.None;
+                    if(leftFrom && rightFrom) {
+                        setTileAs = tileSMiddle;
+                    }
+                    else if(leftFrom) {
+                        setTileAs = tileSRight;
+                    }
+                    else if(rightFrom) {
+                        setTileAs = tileSLeft;
+                    }
+                    else {
+                        setTileAs = tileSSingle;
+                    }
+                    
+                    break;
+                case TileType.RampLeft:
+                    setTileAs = tileRLeft;
+                    break;
+                case TileType.RampRight:
+                    setTileAs = tileRRight;
+                    break;
+                case TileType.None:
+                    switch(GetTileType(position + new Vector3Int(0, 1, 0))) {
+                        case TileType.RampLeft:
+                            setTileAs = tileCRight;
+                            break;
+                        case TileType.RampRight:
+                            setTileAs = tileCLeft;
+                            break;
+                    }
+                    break;
+            }
+            tilemap.SetTile(position, setTileAs);
+        }
+        
+        if(updateNeighbors) {
+            UpdateTile(position + new Vector3Int(1, 0, 0), false);
+            UpdateTile(position + new Vector3Int(-1, 0, 0), false);
+            UpdateTile(position + new Vector3Int(0, 1, 0), false);
+            UpdateTile(position + new Vector3Int(0, -1, 0), false);
+            UpdateTile(position + new Vector3Int(1, 1, 0), false);
+            UpdateTile(position + new Vector3Int(-1, 1, 0), false);
+            UpdateTile(position + new Vector3Int(1, -1, 0), false);
+            UpdateTile(position + new Vector3Int(-1, -1, 0), false);
+        }
     }
 
     public void GetInputs(ref int tracksHeld) {
@@ -95,19 +184,24 @@ public class RailController : MonoBehaviour {
         else if(tileIndex >= tileTypes.Length) {
             tileIndex = 0;
         }
-
-        if((tracksHeld > 0 || tilemap.GetTile(mousePos)) && Input.GetMouseButtonDown(0)) {
-            if(!tilemap.GetTile(mousePos)) {
-                tracksHeld--;
+        currentTileType = tileTypes[tileIndex];
+        
+        if(InRange(mousePos)) {
+            if((tracksHeld > 0 || HasTile(mousePos)) && Input.GetMouseButtonDown(0)) {
+                if(!HasTile(mousePos)) {
+                    tracksHeld--;
+                }
+                tileGrid[mousePos.x, mousePos.y] = currentTileType;
+                UpdateTile(mousePos, true);
+                
             }
-            //tilemap.SetTile(mousePos, tileBase[tileIndex]);
+            
+            if(Input.GetMouseButtonDown(1) && HasTile(mousePos)) {
+                tileGrid[mousePos.x, mousePos.y] = TileType.None;
+                UpdateTile(mousePos, true);
+                tracksHeld++;
+            }
         }
-        
-        if(Input.GetMouseButtonDown(1) && tilemap.GetTile(mousePos)) {
-            tilemap.SetTile(mousePos, null);
-            tracksHeld++;
-        }
-        
         drawHelper = true;
     }
 }
