@@ -21,6 +21,8 @@ public class Minecart : MonoBehaviour {
     float targetMovementSpeed = 0;
     float jump = 0;
 
+    public int gems = 0;
+
     void Start() {
         sprite = GetComponent<SpriteRenderer>();
         controller = GetComponent<Controller2D>();
@@ -55,14 +57,11 @@ public class Minecart : MonoBehaviour {
 
         controller.Move(velocity*Time.deltaTime);
 
-        if(controller.collisions.below) {
+        if(controller.collisions.below || controller.collisions.above) {
             velocity.y = 0;
         }
 
-        if(velocity.x > 0 && controller.collisions.right) {
-            velocity.x = 0;
-        }
-        else if(velocity.x < 0 && controller.collisions.left) {
+        if(controller.collisions.left || controller.collisions.right) {
             velocity.x = 0;
         }
 
@@ -87,5 +86,14 @@ public class Minecart : MonoBehaviour {
 
     void InteractedWith(Player player) {
         player.minecart = this;
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        Gem gem = other.GetComponent<Gem>();
+        if(gem) {
+            gems++;
+            gem.collected = true;
+            Destroy(other.gameObject);
+        }
     }
 }

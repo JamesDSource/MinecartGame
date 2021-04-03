@@ -15,7 +15,7 @@ TagManager:
   - Minecart
   - Pick Axe
   - Rails
-  - 
+  - Gem
   - 
   - 
   - 
@@ -53,9 +53,12 @@ TagManager:
   - name: Minecart
     uniqueID: 456729699
     locked: 0
-  - name: Rail Helper
-    uniqueID: 1712061213
+  - name: Gems
+    uniqueID: 3017407137
     locked: 0
   - name: Pick Axe
     uniqueID: 2874283443
+    locked: 0
+  - name: Rail Helper
+    uniqueID: 1712061213
     locked: 0

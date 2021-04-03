@@ -31,6 +31,7 @@ public class Player : MonoBehaviour {
     public int tracksHeld = 0;
 
     public Minecart minecart;
+    public Gem gemHolding;
 
     [SerializeField] GameObject pickAxe;
 
@@ -48,6 +49,9 @@ public class Player : MonoBehaviour {
                 ThrowPickAxe();
                 if(minecart) {
                     state =  PlayerState.Minecart;
+                }
+                else if(gemHolding) {
+                    state = PlayerState.Carry;
                 }
                 break;
             case PlayerState.Minecart:
@@ -69,8 +73,16 @@ public class Player : MonoBehaviour {
                 }
                 break;
             case PlayerState.Carry:
+                if(gemHolding.collected || velocity.y > 0 || Input.GetKeyDown(KeyCode.Space)) {
+                    gemHolding = null;
+                }
+                if(!gemHolding) {
+                    state = PlayerState.Free;
+                    break;
+                }
                 Movement();
                 BuildingTracks();
+                gemHolding.transform.position = transform.position;
                 break;
         }     
     }
