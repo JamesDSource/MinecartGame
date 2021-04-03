@@ -184,6 +184,59 @@ public class RailController : MonoBehaviour {
         }
     }
 
+    List<Vector3Int> GetConnecting(Vector3Int point) {
+        List<Vector3Int> possibleConnections = new List<Vector3Int>();
+        TileType pointType = GetTileType(point);
+        switch(pointType) {
+            case TileType.Straight:
+                possibleConnections.Add(new Vector3Int(point.x + 1, point.y, 0));
+                possibleConnections.Add(new Vector3Int(point.x - 1, point.y, 0));
+                break;
+            case TileType.RampLeft:
+                possibleConnections.Add(new Vector3Int(point.x - 1, point.y, 0));
+                possibleConnections.Add(new Vector3Int(point.x + 1, point.y - 1, 0));
+                break;
+            case TileType.RampRight:
+                possibleConnections.Add(new Vector3Int(point.x + 1, point.y, 0));
+                possibleConnections.Add(new Vector3Int(point.x - 1, point.y - 1, 0));
+                break;
+        }
+
+        List<Vector3Int> returnArray = new List<Vector3Int>();
+        foreach(Vector3Int connection in possibleConnections) {
+            TileType connectionType = GetTileType(connection);
+            if(connectionType != TileType.None) {
+                returnArray.Add(connection);
+            }
+        }
+
+        return returnArray;
+    }
+
+    bool IsConnection(Vector3Int startPoint, Vector3Int endPoint) {
+        List<Vector3Int> connecting = GetConnecting(endPoint);
+        foreach(Vector3Int connection in connecting) {
+            if(CheckPath(connection, endPoint, startPoint)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    bool CheckPath(Vector3Int point, Vector3Int from, Vector3Int lookingFor) {
+        List<Vector3Int> connecting = GetConnecting(point);
+        foreach(Vector3Int connection in connecting) {
+            if(connection.Equals(lookingFor)) {
+                return true;
+            }
+
+            if(!connection.Equals(from) && CheckPath(connection, point, lookingFor)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void GetInputs(ref int tracksHeld) {
         canPlace = true;
 

@@ -21,6 +21,7 @@ public class Player : MonoBehaviour {
     Vector2 velocity;
     float momentum = 0;
     float moveSpeed = 3;
+    float carryMoveSpeed = 1.5f;
 
     Controller2D controller;
 
@@ -43,7 +44,7 @@ public class Player : MonoBehaviour {
         // State machine
         switch(state) {
             case PlayerState.Free:
-                Movement();
+                Movement(moveSpeed);
                 FindInteractables();
                 BuildingTracks();
                 ThrowPickAxe();
@@ -80,14 +81,14 @@ public class Player : MonoBehaviour {
                     state = PlayerState.Free;
                     break;
                 }
-                Movement();
+                Movement(carryMoveSpeed);
                 BuildingTracks();
                 gemHolding.transform.position = transform.position;
                 break;
         }     
     }
 
-    void Movement() {
+    void Movement(float speed) {
         if(controller.collisions.below) {
             momentum = Numbers.Approach(momentum, 0, 8f*Time.deltaTime);
         }
@@ -100,7 +101,7 @@ public class Player : MonoBehaviour {
             velocity.x -= 1;
         }
 
-        velocity.x *= moveSpeed;
+        velocity.x *= speed;
         velocity.x += momentum;
         velocity.y += gravity*Time.deltaTime;
 
