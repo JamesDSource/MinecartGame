@@ -6,43 +6,18 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
 
-    int _tracks;
-    int _gems;
+    [SerializeField] Player player;
+    [SerializeField] Minecart minecart;
+    int _tracks = 0;
+    int _gems = 0;
+    [SerializeField] Text gemsText;
+    [SerializeField] Text tracksText;
 
-    public Text gemsText;
-    public Text tracksText;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _gems = 0;
-        _tracks = 0;
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        _tracks = player.tracksHeld;
+        _gems = minecart.gems;
         gemsText.text = ("" + _gems);
         tracksText.text = ("" + _tracks);
-        
-        if(Input.GetKeyDown("g"))
-        {
-            IncreaseCollection();
-        }
-        
-        if(Input.GetKeyDown("f"))
-        {
-            IncreaseTracks();
-        }
-    }
-
-    void IncreaseCollection()
-    {
-        _gems += 1;
-    }
-
-    void IncreaseTracks()
-    {
-        _tracks += 1;
     }
 }

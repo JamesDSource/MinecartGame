@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 6556671529813300017}
   - component: {fileID: 6556671529813300016}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TrackText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,8 +392,9 @@ GameObject:
   - component: {fileID: 6556671530541881900}
   - component: {fileID: 6556671530541881903}
   - component: {fileID: 6556671530541881902}
+  - component: {fileID: 1355890006274730593}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -482,6 +483,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1355890006274730593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6556671530541881897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57af425eaef95974691a2de9bdb29db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  minecart: {fileID: 0}
+  gemsText: {fileID: 6556671531702853737}
+  tracksText: {fileID: 6556671529813300016}
 --- !u!1 &6556671530669713212
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +698,7 @@ GameObject:
   - component: {fileID: 6556671531702853742}
   - component: {fileID: 6556671531702853737}
   m_Layer: 5
-  m_Name: Text
+  m_Name: GemText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
