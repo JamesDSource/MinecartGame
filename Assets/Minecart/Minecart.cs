@@ -25,6 +25,7 @@ public class Minecart : MonoBehaviour {
     AudioSource audioSource;
     [SerializeField] AudioClip moveOnTracks;
     [SerializeField] AudioClip moveOffTracks;
+    [SerializeField] AudioClip gemCollected;
     AudioClip lastClip = null;
 
     public int gems = 0;
@@ -122,6 +123,7 @@ public class Minecart : MonoBehaviour {
         if(gem) {
             gems++;
             gem.collected = true;
+            audioSource.PlayOneShot(gemCollected);
             Destroy(other.gameObject);
         }
     }

@@ -128,11 +128,7 @@ public class RailController : MonoBehaviour {
 
         Vector3Int gate1Pos = new Vector3Int(Mathf.FloorToInt(enterance.transform.position.x), Mathf.FloorToInt(enterance.transform.position.y), 0);
         Vector3Int gate2Pos = new Vector3Int(Mathf.FloorToInt(exit.transform.position.x), Mathf.FloorToInt(exit.transform.position.y), 0);
-        gatesConnected =    IsConnection(gate1Pos, gate2Pos) ||
-                            IsConnection(gate1Pos + new Vector3Int(0, -1, 0), gate2Pos) ||
-                            IsConnection(gate1Pos, gate2Pos + new Vector3Int(0, -1, 0)) ||
-                            IsConnection(gate1Pos + new Vector3Int(0, -1, 0), gate2Pos + new Vector3Int(0, -1, 0));
-
+        gatesConnected = IsConnection(gate1Pos + new Vector3Int(0, -1, 0), gate2Pos + new Vector3Int(0, -1, 0));
     }
 
     bool InRange(Vector3Int position) {
@@ -204,29 +200,85 @@ public class RailController : MonoBehaviour {
     }
 
     List<Vector3Int> GetConnecting(Vector3Int point) {
-        List<Vector3Int> possibleConnections = new List<Vector3Int>();
+        List<Vector3Int> returnArray = new List<Vector3Int>();
         TileType pointType = GetTileType(point);
+        TileType tile;
         switch(pointType) {
             case TileType.Straight:
-                possibleConnections.Add(new Vector3Int(point.x + 1, point.y, 0));
-                possibleConnections.Add(new Vector3Int(point.x - 1, point.y, 0));
+                // Right
+                tile = GetTileType(point + new Vector3Int(1, 0, 0));
+                if(tile == TileType.Straight || tile == TileType.RampLeft) {
+                    returnArray.Add(point + new Vector3Int(1, 0, 0));
+                }
+
+                // Left
+                tile = GetTileType(point + new Vector3Int(-1, 0, 0));
+                if(tile == TileType.Straight || tile == TileType.RampRight) {
+                    returnArray.Add(point + new Vector3Int(-1, 0, 0));
+                }
+
+                // Right Up
+                tile = GetTileType(point + new Vector3Int(1, 1, 0));
+                if(tile == TileType.RampRight) {
+                    returnArray.Add(point + new Vector3Int(1, 1, 0));
+                }
+
+                // Left Up
+                tile = GetTileType(point + new Vector3Int(-1, 1, 0));
+                if(tile == TileType.RampLeft) {
+                    returnArray.Add(point + new Vector3Int(-1, 1, 0));
+                }
                 break;
             case TileType.RampLeft:
-                possibleConnections.Add(new Vector3Int(point.x - 1, point.y, 0));
-                possibleConnections.Add(new Vector3Int(point.x + 1, point.y - 1, 0));
+                // Right
+                tile = GetTileType(point + new Vector3Int(1, 0, 0));
+                if(tile == TileType.RampRight) {
+                    returnArray.Add(point + new Vector3Int(1, 0, 0));
+                }
+
+                // Left
+                tile = GetTileType(point + new Vector3Int(-1, 0, 0));
+                if(tile == TileType.Straight || tile == TileType.RampRight) {
+                    returnArray.Add(point + new Vector3Int(-1, 0, 0));
+                }
+
+                // Right Down
+                tile = GetTileType(point + new Vector3Int(1, -1, 0));
+                if(tile == TileType.Straight || tile == TileType.RampLeft) {
+                    returnArray.Add(point + new Vector3Int(1, -1, 0));
+                }
+
+                // Left Up
+                tile = GetTileType(point + new Vector3Int(-1, 1, 0));
+                if(tile == TileType.RampLeft) {
+                    returnArray.Add(point + new Vector3Int(-1, 1, 0));
+                }
                 break;
             case TileType.RampRight:
-                possibleConnections.Add(new Vector3Int(point.x + 1, point.y, 0));
-                possibleConnections.Add(new Vector3Int(point.x - 1, point.y - 1, 0));
-                break;
-        }
+                // Right
+                tile = GetTileType(point + new Vector3Int(1, 0, 0));
+                if(tile == TileType.RampLeft || tile == TileType.Straight) {
+                    returnArray.Add(point + new Vector3Int(1, 0, 0));
+                }
 
-        List<Vector3Int> returnArray = new List<Vector3Int>();
-        foreach(Vector3Int connection in possibleConnections) {
-            TileType connectionType = GetTileType(connection);
-            if(connectionType != TileType.None) {
-                returnArray.Add(connection);
-            }
+                // Left
+                tile = GetTileType(point + new Vector3Int(-1, 0, 0));
+                if(tile == TileType.RampLeft) {
+                    returnArray.Add(point + new Vector3Int(-1, 0, 0));
+                }
+
+                // Right Up
+                tile = GetTileType(point + new Vector3Int(1, 1, 0));
+                if(tile == TileType.RampRight) {
+                    returnArray.Add(point + new Vector3Int(1, 1, 0));
+                }
+
+                // Left Down
+                tile = GetTileType(point + new Vector3Int(-1, -1, 0));
+                if(tile == TileType.RampRight || tile == TileType.Straight) {
+                    returnArray.Add(point + new Vector3Int(-1, -1, 0));
+                }
+                break;
         }
 
         return returnArray;
