@@ -85,7 +85,7 @@ public class Player : MonoBehaviour {
                 transform.position = new Vector3(minecartPos.x, minecartPos.y + 0.5f, minecartPos.z);
 
                 if(Input.GetKeyDown(KeyCode.Space)) {
-                    velocity.y = jumpVelocity + Mathf.Max(minecart.velocity.y, 0);
+                    velocity.y = jumpVelocity + Mathf.Clamp(minecart.velocity.y, 0, 3);
                     momentum = minecart.velocity.x;
                     minecart = null;
                 }

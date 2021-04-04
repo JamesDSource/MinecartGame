@@ -47,8 +47,14 @@ public class RailController : MonoBehaviour {
     bool canPlace = false;
     Vector3Int mousePos;
     Vector3 mouseWorldPoint;
+
+    AudioSource audioSource;
+    [SerializeField] AudioClip placingTrack;
+    [SerializeField] AudioClip rotatingTrack;
     
     void Start() {
+        audioSource = GetComponent<AudioSource>();
+
         tileGrid = new TileType[tileDimensions.x, tileDimensions.y];
         List<Vector3Int> occupiedTiles = new List<Vector3Int>();
 
@@ -251,6 +257,12 @@ public class RailController : MonoBehaviour {
         else if(tileIndex >= tileTypes.Length) {
             tileIndex = 0;
         }
+
+        if(Input.mouseScrollDelta.y != 0) {
+            audioSource.clip = rotatingTrack;
+            audioSource.Play();
+        }
+
         currentTileType = tileTypes[tileIndex];
         
         if(InRange(mousePos)) {
@@ -262,6 +274,9 @@ public class RailController : MonoBehaviour {
                 tileGrid[mousePos.x, mousePos.y] = currentTileType;
                 UpdateTile(mousePos, true);
                 tracksHeld--;
+
+                audioSource.clip = placingTrack;
+                audioSource.Play();
                 
             }
             

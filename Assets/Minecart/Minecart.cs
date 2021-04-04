@@ -22,14 +22,20 @@ public class Minecart : MonoBehaviour {
     float targetMovementSpeed = 0;
     float jump = 0;
 
+    AudioSource audioSource;
+    [SerializeField] AudioClip moveOnTracks;
+    [SerializeField] AudioClip moveOffTracks;
+    AudioClip lastClip = null;
+
     public int gems = 0;
 
     void Start() {
         sprite = GetComponent<SpriteRenderer>();
         controller = GetComponent<Controller2D>();
         interactable = GetComponent<Interactable>();
-        interactable.interactedWith = InteractedWith;
+        audioSource = GetComponent<AudioSource>();
 
+        interactable.interactedWith = InteractedWith;
         interactable.action = "enter mine cart";
     }
     
@@ -69,6 +75,26 @@ public class Minecart : MonoBehaviour {
         }
 
         targetMovementSpeed = 0;
+
+        if(velocity.x != 0 && controller.collisions.below) {
+            if(onRail) {
+                audioSource.clip = moveOnTracks;
+            }
+            else {
+                audioSource.clip = moveOffTracks;
+            }
+            audioSource.volume = Mathf.Abs(velocity.x) / (onRail ? maxMovementSpeed : offRailsMaxMovementSpeed);
+        }
+        else {
+            audioSource.clip = null;
+        }
+
+        if(audioSource.clip != lastClip) {
+            if(audioSource.clip != null) {
+                audioSource.Play();
+            }
+            lastClip = audioSource.clip;
+        }
     }
 
     public void Movement() {
