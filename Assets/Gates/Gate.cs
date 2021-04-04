@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Interactable), typeof(Animator))]
-public class Gate : MonoBehaviour {
+public class Gate : MonoBehaviour { 
+    [SerializeField] SceneManaging sceneManaging;
     [SerializeField] RailController railController;
     Interactable interactable;
     Animator animator;
@@ -26,6 +27,6 @@ public class Gate : MonoBehaviour {
     }
 
     void LevelEnd(Player player) {
-        print("Level ended");
+        sceneManaging.GotoNextScene();
     }
 }

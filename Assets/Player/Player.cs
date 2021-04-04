@@ -243,17 +243,21 @@ public class Player : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Enemy") {
-            UIObject.GetComponent<UIManager>().TakeDamage(1);
-            if(UIObject.slider.value <= 0) {
-                state = PlayerState.Dead;
-                animator.SetBool("dead", true);
-            }
+            Damage();
         }
         //assuming the health pickups have collider and health tag
         else if (collision.gameObject.tag == "Health") {
             //heal to full
             UIObject.GetComponent<UIManager>().SetHealth(5);
         }
-    }  
+    }
+
+    public void Damage() {
+        UIObject.GetComponent<UIManager>().TakeDamage(1);
+        if(UIObject.slider.value <= 0) {
+            state = PlayerState.Dead;
+            animator.SetBool("dead", true);
+        }
+    }
 
 }
