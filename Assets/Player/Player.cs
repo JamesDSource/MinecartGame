@@ -12,7 +12,7 @@ public class Player : MonoBehaviour {
         Carry,
         Dead
     }
-    PlayerState state = PlayerState.Free;
+    public PlayerState state = PlayerState.Free;
     bool building = false;
 
     const float gravity = -14;

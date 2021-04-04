@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Text gemsText;
     [SerializeField] Text tracksText;
     [SerializeField] Text actionText;
+    [SerializeField] Text deathText;
 
     public Slider slider;
 
@@ -34,6 +35,10 @@ public class UIManager : MonoBehaviour
         }
         else {
             actionText.text = "";
+        }
+
+        if(player.state == Player.PlayerState.Dead) {
+            deathText.text = "You Died\nPress \"R\" to restart";
         }
 
     }

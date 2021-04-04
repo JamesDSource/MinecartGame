@@ -24,7 +24,7 @@ public class SceneManaging : MonoBehaviour
             //our only scene is SampleScene
             //pressing R loads the scene again
             //adding more scenes involves working with build settings
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
