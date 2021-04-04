@@ -27,6 +27,7 @@ public class Player : MonoBehaviour {
 
     Interactable closestInteractable;
     float interactableRadius = 2;
+    bool displayInterAction = false;
 
     [SerializeField] RailController railController;
     public int tracksHeld = 0;
@@ -101,20 +102,34 @@ public class Player : MonoBehaviour {
                 BuildingTracks();
                 gemHolding.transform.position = transform.position;
                 break;
-        }     
+            case PlayerState.Dead:
+                Movement(0f, false);
+                break;
+        }
+
+        if(displayInterAction) {
+            UIObject.actionStr = closestInteractable.action;
+            displayInterAction = false;
+        }
+        else {
+            UIObject.actionStr = "";
+        }
+        
     }
 
-    void Movement(float speed) {
+    void Movement(float speed, bool takeInputs = true) {
         if(controller.collisions.below) {
             momentum = Numbers.Approach(momentum, 0, 8f*Time.deltaTime);
         }
 
         velocity.x = 0;
-        if(Input.GetKey(KeyCode.D)) {
-            velocity.x += 1;
-        }
-        if(Input.GetKey(KeyCode.A)) {
-            velocity.x -= 1;
+        if(takeInputs) {
+            if(Input.GetKey(KeyCode.D)) {
+                velocity.x += 1;
+            }
+            if(Input.GetKey(KeyCode.A)) {
+                velocity.x -= 1;
+            }
         }
 
         animator.SetBool("isRunning", velocity.x != 0);
@@ -135,7 +150,7 @@ public class Player : MonoBehaviour {
             jump = 0.5f;
         }
 
-        if(jump > 0 && controller.collisions.below) {
+        if(jump > 0 && controller.collisions.below && takeInputs) {
             velocity.y = jumpVelocity;
             jump = 0;
             momentum = 0;
@@ -170,8 +185,11 @@ public class Player : MonoBehaviour {
                 }
             }
         }
-        if(closestInteractable && Input.GetKeyDown(KeyCode.Space)) {
-            closestInteractable.interactedWith(this);
+        if(closestInteractable) {
+            displayInterAction = true;
+            if(Input.GetKeyDown(KeyCode.Space)) {
+                closestInteractable.interactedWith(this);
+            }
         }
     }
 
@@ -213,13 +231,16 @@ public class Player : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Enemy") {
             UIObject.GetComponent<UIManager>().TakeDamage(1);
+            if(UIObject.slider.value <= 0) {
+                state = PlayerState.Dead;
+                animator.SetBool("dead", true);
+            }
         }
         //assuming the health pickups have collider and health tag
         else if (collision.gameObject.tag == "Health") {
             //heal to full
             UIObject.GetComponent<UIManager>().SetHealth(5);
         }
-    }
-    
+    }  
 
 }

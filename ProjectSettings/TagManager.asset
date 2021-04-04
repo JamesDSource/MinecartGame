@@ -51,14 +51,14 @@ TagManager:
   - name: Rails
     uniqueID: 1681460311
     locked: 0
+  - name: Gems
+    uniqueID: 3017407137
+    locked: 0
   - name: Player
     uniqueID: 1263777017
     locked: 0
   - name: Minecart
     uniqueID: 456729699
-    locked: 0
-  - name: Gems
-    uniqueID: 3017407137
     locked: 0
   - name: Pick Axe
     uniqueID: 2874283443

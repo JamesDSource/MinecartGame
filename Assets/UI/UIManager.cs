@@ -12,8 +12,11 @@ public class UIManager : MonoBehaviour
     int _gems = 0;
     [SerializeField] Text gemsText;
     [SerializeField] Text tracksText;
+    [SerializeField] Text actionText;
 
     public Slider slider;
+
+    public string actionStr = "";
 
     void Start()
     {
@@ -25,6 +28,13 @@ public class UIManager : MonoBehaviour
         _gems = minecart.gems;
         gemsText.text = ("" + _gems);
         tracksText.text = ("" + _tracks);
+        
+        if(actionStr != "") {
+            actionText.text = "Press SPACE to " + actionStr;
+        }
+        else {
+            actionText.text = "";
+        }
 
     }
 

@@ -29,6 +29,8 @@ public class Minecart : MonoBehaviour {
         controller = GetComponent<Controller2D>();
         interactable = GetComponent<Interactable>();
         interactable.interactedWith = InteractedWith;
+
+        interactable.action = "enter mine cart";
     }
     
     void Update() {

@@ -21,6 +21,7 @@ public class Gem : MonoBehaviour {
         
         interactable = GetComponent<Interactable>();
         interactable.interactedWith = InteractedWith;
+        interactable.action = "pick up gem";
 
         controller = GetComponent<Controller2D>();
     }
