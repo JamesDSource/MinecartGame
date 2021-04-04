@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -41,6 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2469080469
+    locked: 0
   - name: Rock
     uniqueID: 2403243635
     locked: 0
@@ -61,4 +65,7 @@ TagManager:
     locked: 0
   - name: Rail Helper
     uniqueID: 1712061213
+    locked: 0
+  - name: Enemies
+    uniqueID: 3224866419
     locked: 0

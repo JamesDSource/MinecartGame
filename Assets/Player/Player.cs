@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent (typeof(Controller2D))]
+[RequireComponent (typeof(Controller2D), typeof(SpriteRenderer), typeof(Animator))]
 public class Player : MonoBehaviour {
     [SerializeField] Camera cam;
 
@@ -40,9 +40,14 @@ public class Player : MonoBehaviour {
 
     [SerializeField] UIManager UIObject;
 
+    Animator animator;
+    SpriteRenderer spriteRenderer;
+
     void Start() {
         controller = GetComponent<Controller2D>();
         UIObject = Object.FindObjectOfType<UIManager>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update() {
@@ -66,6 +71,12 @@ public class Player : MonoBehaviour {
                 if(!minecart) {
                     state = PlayerState.Free;
                     break;
+                }
+
+                animator.SetBool("isJumping", false);
+                animator.SetBool("isRunning", false);
+                if(minecart.velocity.x != 0) {
+                    spriteRenderer.flipX = minecart.velocity.x < 0;
                 }
 
                 minecart.Movement();
@@ -106,6 +117,12 @@ public class Player : MonoBehaviour {
             velocity.x -= 1;
         }
 
+        animator.SetBool("isRunning", velocity.x != 0);
+        if(velocity.x != 0) {
+            spriteRenderer.flipX = velocity.x == -1;
+        }
+
+
         velocity.x *= speed;
         velocity.x += momentum;
         velocity.y += gravity*Time.deltaTime;
@@ -122,6 +139,7 @@ public class Player : MonoBehaviour {
             velocity.y = jumpVelocity;
             jump = 0;
             momentum = 0;
+            animator.SetBool("isJumping", true);
         }
         else if(jump > 0) {
             jump -= Time.deltaTime;
@@ -131,6 +149,7 @@ public class Player : MonoBehaviour {
         
         if(controller.collisions.above || controller.collisions.below) {
             velocity.y = 0;
+            animator.SetBool("isJumping", false);
         }
     }
 
@@ -183,10 +202,15 @@ public class Player : MonoBehaviour {
             Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             pickComp.Launch((mousePos - spawnPos).normalized);
             pickTimer = pickDelay;
+            animator.SetBool("hasThrown", true);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    void ThrowAnimFinish() {
+        animator.SetBool("hasThrown", false);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Enemy") {
             UIObject.GetComponent<UIManager>().TakeDamage(1);
         }

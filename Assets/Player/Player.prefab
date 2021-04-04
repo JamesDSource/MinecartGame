@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2611517019502655618}
   - component: {fileID: 917170306339657740}
   - component: {fileID: 9065520006441966110}
+  - component: {fileID: 6849443567863874700}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -73,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1263777017
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4,
+  m_Sprite: {fileID: -7711065664438714855, guid: b94371eebb3512c47b3cad72b5d54027,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,7 +105,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.8125, y: 1.1875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -147,6 +148,7 @@ MonoBehaviour:
   minecart: {fileID: 0}
   gemHolding: {fileID: 0}
   pickAxe: {fileID: 3767933244343917930, guid: df6c95a20bc7bdc4ca7e2f8703444a28, type: 3}
+  UIObject: {fileID: 0}
 --- !u!50 &9065520006441966110
 Rigidbody2D:
   serializedVersion: 4
@@ -168,3 +170,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &6849443567863874700
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102234176589783378}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c7e014db165a4a140adbd824e4a79017, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
