@@ -38,8 +38,11 @@ public class Player : MonoBehaviour {
     float pickDelay = 0.5f;
     float pickTimer = 0;
 
+    [SerializeField] UIManager UIObject;
+
     void Start() {
         controller = GetComponent<Controller2D>();
+        UIObject = Object.FindObjectOfType<UIManager>();
     }
 
     void Update() {
@@ -173,7 +176,7 @@ public class Player : MonoBehaviour {
             pickTimer -= Time.deltaTime;
         }
 
-        if(!building && Input.GetMouseButtonDown(0) && pickTimer <= 0) {
+        if(!building && Input.GetMouseButtonUp(0) && pickTimer <= 0) {
             Vector3 spawnPos = transform.position + new Vector3(0, 0.25f, 0);
             GameObject newGO = Instantiate(pickAxe, spawnPos, new Quaternion());
             PickAxe pickComp = newGO.GetComponent<PickAxe>();
@@ -182,5 +185,17 @@ public class Player : MonoBehaviour {
             pickTimer = pickDelay;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.tag == "Enemy") {
+            UIObject.GetComponent<UIManager>().TakeDamage(1);
+        }
+        //assuming the health pickups have collider and health tag
+        else if (collision.gameObject.tag == "Health") {
+            //heal to full
+            UIObject.GetComponent<UIManager>().SetHealth(5);
+        }
+    }
+    
 
 }

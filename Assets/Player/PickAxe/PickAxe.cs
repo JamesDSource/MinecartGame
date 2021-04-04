@@ -25,6 +25,11 @@ public class PickAxe : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D other) {
+        EnemyHealth hp = other.GetComponent<EnemyHealth>();
+        if(hp) {
+            hp.EnemyTakeDamage();
+        }
+
         Destroy(this.gameObject);
     }
 

@@ -7,6 +7,7 @@ public class RailController : MonoBehaviour {
     [SerializeField] Camera cam;
     [SerializeField] Tilemap tilemap;
     [SerializeField] ITilemap iTilemap;
+    [SerializeField] LayerMask placeCheckMask;
 
     [SerializeField] Vector2Int tileDimensions;
 
@@ -253,7 +254,7 @@ public class RailController : MonoBehaviour {
         currentTileType = tileTypes[tileIndex];
         
         if(InRange(mousePos)) {
-            if(Physics2D.OverlapBox(mousePos + (currentTileType == TileType.Straight ? new Vector3(0, 1, 0) : new Vector3()) + new Vector3(0.5f, 0.5f, 0), new Vector2(0.9f, 0.9f), 0)) {
+            if(Physics2D.OverlapBox(mousePos + (currentTileType == TileType.Straight ? new Vector3(0, 1, 0) : new Vector3()) + new Vector3(0.5f, 0.5f, 0), new Vector2(0.9f, 0.9f), 0, placeCheckMask)) {
                 canPlace = false;
             }
 

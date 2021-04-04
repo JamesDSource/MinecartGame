@@ -18,6 +18,7 @@ public class Minecart : MonoBehaviour {
     float maxMovementSpeed = 6;
     float offRailsMaxMovementSpeed = 2;
     float jumpVelocity = 8;
+    float offRailsJumpVelocity = 4;
     float targetMovementSpeed = 0;
     float jump = 0;
 
@@ -36,7 +37,7 @@ public class Minecart : MonoBehaviour {
 
         if(controller.collisions.below) {
             if(jump > 0) {
-                velocity.y = jumpVelocity;
+                velocity.y = onRail ? jumpVelocity : offRailsJumpVelocity;
                 jump = 0;
             }
             else {

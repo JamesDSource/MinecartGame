@@ -283,6 +283,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   tilemap: {fileID: 372735788523692134}
+  placeCheckMask:
+    serializedVersion: 2
+    m_Bits: 576
   tileDimensions: {x: 16, y: 16}
   tileStraightSprite: {fileID: 990039643894092421, guid: 621b0670cb0841f4985d83c76490e80d,
     type: 3}
@@ -368,7 +371,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1712061213
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
