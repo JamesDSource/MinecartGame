@@ -25,7 +25,7 @@ public class EnemyPathfinding : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player");
         _playerTransform = _player.GetComponent<Transform>();
 
-        distanceToAttack = 10f;
+        distanceToAttack = 50f;
 
         batAnimator = gameObject.GetComponent<Animator>();
         batAnimator.SetBool("Flying", false);

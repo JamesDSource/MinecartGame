@@ -43,12 +43,16 @@ public class Player : MonoBehaviour {
 
     Animator animator;
     SpriteRenderer spriteRenderer;
+    
+    AudioSource audioSource;
+    [SerializeField] AudioClip railPurchased;
 
     void Start() {
         controller = GetComponent<Controller2D>();
         UIObject = Object.FindObjectOfType<UIManager>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update() {
@@ -74,6 +78,14 @@ public class Player : MonoBehaviour {
                     break;
                 }
 
+                if(minecart.gems >= 3) {
+                    audioSource.PlayOneShot(railPurchased);
+                }
+                while(minecart.gems >= 3) {
+                    minecart.gems -= 3;
+                    tracksHeld += 2;
+                }
+
                 animator.SetBool("isJumping", false);
                 animator.SetBool("isRunning", false);
                 if(minecart.velocity.x != 0) {
@@ -91,16 +103,17 @@ public class Player : MonoBehaviour {
                 }
                 break;
             case PlayerState.Carry:
-                if(gemHolding.collected || velocity.y > 0 || Input.GetKeyDown(KeyCode.Space)) {
+                Movement(carryMoveSpeed);
+                BuildingTracks();
+                if(gemHolding.collected || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) {
                     gemHolding = null;
                 }
                 if(!gemHolding) {
                     state = PlayerState.Free;
                     break;
                 }
-                Movement(carryMoveSpeed);
-                BuildingTracks();
                 gemHolding.transform.position = transform.position;
+                gemHolding.transform.rotation = Quaternion.AngleAxis(90, Vector3.forward);
                 break;
             case PlayerState.Dead:
                 Movement(0f, false);

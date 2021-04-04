@@ -259,8 +259,7 @@ public class RailController : MonoBehaviour {
         }
 
         if(Input.mouseScrollDelta.y != 0) {
-            audioSource.clip = rotatingTrack;
-            audioSource.Play();
+            audioSource.PlayOneShot(rotatingTrack);
         }
 
         currentTileType = tileTypes[tileIndex];
@@ -275,8 +274,7 @@ public class RailController : MonoBehaviour {
                 UpdateTile(mousePos, true);
                 tracksHeld--;
 
-                audioSource.clip = placingTrack;
-                audioSource.Play();
+                audioSource.PlayOneShot(placingTrack);
                 
             }
             

@@ -58,7 +58,7 @@ public class Controller2D : MonoBehaviour {
         if(velocity.y != 0) {
             VerticleCollisions(ref velocity);
         }
-        transform.Translate(velocity);
+        transform.position += new Vector3(velocity.x, velocity.y, 0);
     }
 
     void HorizontalCollisions(ref Vector2 velocity) {
