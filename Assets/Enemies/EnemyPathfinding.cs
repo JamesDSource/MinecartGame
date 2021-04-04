@@ -20,6 +20,11 @@ public class EnemyPathfinding : MonoBehaviour
     Vector3 originalPosition;
 
     Animator batAnimator;
+
+    AudioSource audioSource;
+    [SerializeField] AudioClip alerted;
+    bool playAlert = true;
+
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -30,6 +35,8 @@ public class EnemyPathfinding : MonoBehaviour
         batAnimator = gameObject.GetComponent<Animator>();
         batAnimator.SetBool("Flying", false);
         originalPosition = transform.position;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,6 +51,11 @@ public class EnemyPathfinding : MonoBehaviour
             Movement(_playerTransform.position);
             batAnimator.SetBool("Flying", true);
             //animation switch to flying
+
+            if(playAlert) {
+                audioSource.PlayOneShot(alerted);
+                playAlert = false;
+            }
         }
         else if(distanceToPlayer > distanceToAttack)
         {
@@ -52,6 +64,8 @@ public class EnemyPathfinding : MonoBehaviour
             {
                 batAnimator.SetBool("Flying", false);
             }
+
+            playAlert = true;
         }
     }
 

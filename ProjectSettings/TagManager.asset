@@ -17,7 +17,7 @@ TagManager:
   - Pick Axe
   - Rails
   - Gem
-  - 
+  - Gate
   - 
   - 
   - 
@@ -44,6 +44,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 2469080469
+    locked: 0
+  - name: Gate
+    uniqueID: 507624413
     locked: 0
   - name: Rock
     uniqueID: 2403243635

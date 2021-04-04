@@ -26,7 +26,7 @@ public class Player : MonoBehaviour {
     Controller2D controller;
 
     Interactable closestInteractable;
-    float interactableRadius = 2;
+    float interactableRadius = 1f;
     bool displayInterAction = false;
 
     [SerializeField] RailController railController;
@@ -98,7 +98,7 @@ public class Player : MonoBehaviour {
 
                 if(Input.GetKeyDown(KeyCode.Space)) {
                     velocity.y = jumpVelocity + Mathf.Clamp(minecart.velocity.y, 0, 3);
-                    momentum = minecart.velocity.x;
+                    momentum = Mathf.Max(minecart.velocity.x, 3);
                     minecart = null;
                 }
                 break;
@@ -192,7 +192,7 @@ public class Player : MonoBehaviour {
             if(interactable) {
                 float dist = Vector2.Distance(collider.transform.position, transform.position);
                 
-                if(dist < closestDistance) {
+                if(dist < closestDistance && interactable.isInteractable) {
                     closestInteractable = interactable;
                     closestDistance = dist;
                 }

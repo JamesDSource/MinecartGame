@@ -5,6 +5,10 @@ using UnityEngine.Tilemaps;
 
 public class RailController : MonoBehaviour {
     [SerializeField] Camera cam;
+    [SerializeField] Gate enterance;
+    [SerializeField] Gate exit;
+    bool gatesConnected = false;
+
     [SerializeField] Tilemap tilemap;
     [SerializeField] ITilemap iTilemap;
     [SerializeField] LayerMask placeCheckMask;
@@ -121,6 +125,14 @@ public class RailController : MonoBehaviour {
         else {
             helper.sprite = null;
         }
+
+        Vector3Int gate1Pos = new Vector3Int(Mathf.FloorToInt(enterance.transform.position.x), Mathf.FloorToInt(enterance.transform.position.y), 0);
+        Vector3Int gate2Pos = new Vector3Int(Mathf.FloorToInt(exit.transform.position.x), Mathf.FloorToInt(exit.transform.position.y), 0);
+        gatesConnected =    IsConnection(gate1Pos, gate2Pos) ||
+                            IsConnection(gate1Pos + new Vector3Int(0, -1, 0), gate2Pos) ||
+                            IsConnection(gate1Pos, gate2Pos + new Vector3Int(0, -1, 0)) ||
+                            IsConnection(gate1Pos + new Vector3Int(0, -1, 0), gate2Pos + new Vector3Int(0, -1, 0));
+
     }
 
     bool InRange(Vector3Int position) {
@@ -265,11 +277,15 @@ public class RailController : MonoBehaviour {
         currentTileType = tileTypes[tileIndex];
         
         if(InRange(mousePos)) {
-            if(Physics2D.OverlapBox(mousePos + (currentTileType == TileType.Straight ? new Vector3(0, 1, 0) : new Vector3()) + new Vector3(0.5f, 0.5f, 0), new Vector2(0.9f, 0.9f), 0, placeCheckMask)) {
+            if(
+                HasTile(mousePos)   ||
+                tracksHeld <= 0     ||
+                Physics2D.OverlapBox(mousePos + (currentTileType == TileType.Straight ? new Vector3(0, 1, 0) : new Vector3()) + new Vector3(0.5f, 0.5f, 0), new Vector2(0.9f, 0.9f), 0, placeCheckMask)) 
+            {
                 canPlace = false;
             }
 
-            if(tracksHeld > 0 && Input.GetMouseButtonDown(0) && canPlace) {
+            if(Input.GetMouseButtonDown(0) && canPlace) {
                 tileGrid[mousePos.x, mousePos.y] = currentTileType;
                 UpdateTile(mousePos, true);
                 tracksHeld--;
@@ -288,5 +304,9 @@ public class RailController : MonoBehaviour {
             canPlace = false;
         }
         drawHelper = true;
+    }
+
+    public bool GatesConnected() {
+        return gatesConnected;
     }
 }
