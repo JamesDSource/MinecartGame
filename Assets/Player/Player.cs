@@ -35,6 +35,8 @@ public class Player : MonoBehaviour {
     public Gem gemHolding;
 
     [SerializeField] GameObject pickAxe;
+    float pickDelay = 0.5f;
+    float pickTimer = 0;
 
     void Start() {
         controller = GetComponent<Controller2D>();
@@ -167,14 +169,17 @@ public class Player : MonoBehaviour {
     }
 
     void ThrowPickAxe() {
-        if(!building) {
-            if(Input.GetMouseButtonUp(0)) {
-                Vector3 spawnPos = transform.position + new Vector3(0, 0.25f, 0);
-                GameObject newGO = Instantiate(pickAxe, spawnPos, new Quaternion());
-                PickAxe pickComp = newGO.GetComponent<PickAxe>();
-                Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-                pickComp.Launch((mousePos - spawnPos).normalized);
-            }
+        if(pickTimer > 0) {
+            pickTimer -= Time.deltaTime;
+        }
+
+        if(!building && Input.GetMouseButtonDown(0) && pickTimer <= 0) {
+            Vector3 spawnPos = transform.position + new Vector3(0, 0.25f, 0);
+            GameObject newGO = Instantiate(pickAxe, spawnPos, new Quaternion());
+            PickAxe pickComp = newGO.GetComponent<PickAxe>();
+            Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+            pickComp.Launch((mousePos - spawnPos).normalized);
+            pickTimer = pickDelay;
         }
     }
 
