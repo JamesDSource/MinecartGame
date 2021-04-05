@@ -7,7 +7,7 @@ public class SceneManaging : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             //only works in build
-            Application.Quit();
+            Quit();
         }
         else if (Input.GetKeyDown(KeyCode.R)) {
             //our only scene is SampleScene
@@ -19,5 +19,26 @@ public class SceneManaging : MonoBehaviour {
 
     public void GotoNextScene() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void GoPlayScene()
+    {
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void CreditScreen()
+    {
+        SceneManager.LoadScene("Credit Scene");
+    }
+
+    public void TitleScreen()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
+
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

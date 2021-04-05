@@ -435,7 +435,7 @@ public class RailController : MonoBehaviour {
         public float stability;
 
         public void ResetStability() {
-            stability = 2f;
+            stability = 1f;
         }
     }
 }
