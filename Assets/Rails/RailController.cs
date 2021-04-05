@@ -141,7 +141,7 @@ public class RailController : MonoBehaviour {
         foreach(RailStructure rail in rails) {
             // If the current tile is on stable ground
             List<Vector3Int> connecting = GetConnecting(rail.position);
-            if(rockTiles.HasTile(rail.position)) {
+            if(IsStable(rail.position)) {
                 rail.ResetStability();
                 foreach(Vector3Int connection in connecting) {
                     ChainStability(connection, rail.position);
@@ -166,10 +166,26 @@ public class RailController : MonoBehaviour {
 
         List<Vector3Int> connecting = GetConnecting(point);
         foreach(Vector3Int connection in connecting) {
-            if(!connection.Equals(from) && !rockTiles.HasTile(connection)) {
+            if(!connection.Equals(from) && !IsStable(connection)) {
                 ChainStability(connection, point);
             }
         }
+    }
+
+    bool IsStable(Vector3Int point) {
+        TileType pointType = GetTileType(point);
+        switch(pointType) {
+            case TileType.Straight:
+                return rockTiles.HasTile(point) || rockTiles.HasTile(point + new Vector3Int(1, 0, 0)) || rockTiles.HasTile(point + new Vector3Int(-1, 0, 0));
+                break;
+            case TileType.RampLeft:
+                return rockTiles.HasTile(point + new Vector3Int(0, -1, 0)) || rockTiles.HasTile(point + new Vector3Int(-1, 0, 0)) || rockTiles.HasTile(point + new Vector3Int(0, 1, 0));
+                break;
+            case TileType.RampRight:
+                return rockTiles.HasTile(point + new Vector3Int(0, -1, 0)) || rockTiles.HasTile(point + new Vector3Int(1, 0, 0)) || rockTiles.HasTile(point + new Vector3Int(0, 1, 0));
+                break;
+        }
+        return false;
     }
 
     bool InRange(Vector3Int position) {
