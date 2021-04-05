@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class RailController : MonoBehaviour {
     [SerializeField] Camera cam;
+    [SerializeField] Player player;
     [SerializeField] Gate enterance;
     [SerializeField] Gate exit;
     bool gatesConnected = false;
@@ -22,6 +23,8 @@ public class RailController : MonoBehaviour {
         RampRight
     }
     TileType[,] tileGrid;
+    List<RailStructure> rails = new List<RailStructure>();
+    [SerializeField] Tilemap rockTiles;
 
     [SerializeField] Sprite tileStraightSprite;
     [SerializeField] Sprite tileRampLeftSprite;
@@ -90,6 +93,10 @@ public class RailController : MonoBehaviour {
         // Updates each tile that is not empty
         foreach(Vector3Int tilePos in occupiedTiles) {
             UpdateTile(tilePos, true);
+            RailStructure railStruct = new RailStructure();
+            railStruct.position = tilePos;
+            railStruct.ResetStability();
+            rails.Add(railStruct);
         }
     }
 
@@ -129,6 +136,40 @@ public class RailController : MonoBehaviour {
         Vector3Int gate1Pos = new Vector3Int(Mathf.FloorToInt(enterance.transform.position.x), Mathf.FloorToInt(enterance.transform.position.y), 0);
         Vector3Int gate2Pos = new Vector3Int(Mathf.FloorToInt(exit.transform.position.x), Mathf.FloorToInt(exit.transform.position.y), 0);
         gatesConnected = IsConnection(gate1Pos + new Vector3Int(0, -1, 0), gate2Pos + new Vector3Int(0, -1, 0));
+    
+        // Rail Deterioration
+        foreach(RailStructure rail in rails) {
+            // If the current tile is on stable ground
+            List<Vector3Int> connecting = GetConnecting(rail.position);
+            if(rockTiles.HasTile(rail.position)) {
+                rail.ResetStability();
+                foreach(Vector3Int connection in connecting) {
+                    ChainStability(connection, rail.position);
+                }
+            } 
+
+            if(rail.stability > 0) {
+                rail.stability -= Time.deltaTime/(connecting.Count + 1);
+            }
+            else {
+                RemoveTile(rail.position);
+                break;
+            }
+        }
+    }
+
+    void ChainStability(Vector3Int point, Vector3Int from) {
+        RailStructure pointRail = RailStructureFind(point);
+        if(pointRail != null) {
+            pointRail.ResetStability();
+        }
+
+        List<Vector3Int> connecting = GetConnecting(point);
+        foreach(Vector3Int connection in connecting) {
+            if(!connection.Equals(from) && !rockTiles.HasTile(connection)) {
+                ChainStability(connection, point);
+            }
+        }
     }
 
     bool InRange(Vector3Int position) {
@@ -308,7 +349,7 @@ public class RailController : MonoBehaviour {
         return false;
     }
 
-    public void GetInputs(ref int tracksHeld) {
+    public void GetInputs() {
         canPlace = true;
 
         mouseWorldPoint = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -331,7 +372,7 @@ public class RailController : MonoBehaviour {
         if(InRange(mousePos)) {
             if(
                 HasTile(mousePos)   ||
-                tracksHeld <= 0     ||
+                player.tracksHeld <= 0     ||
                 Physics2D.OverlapBox(mousePos + (currentTileType == TileType.Straight ? new Vector3(0, 1, 0) : new Vector3()) + new Vector3(0.5f, 0.5f, 0), new Vector2(0.9f, 0.9f), 0, placeCheckMask)) 
             {
                 canPlace = false;
@@ -340,16 +381,19 @@ public class RailController : MonoBehaviour {
             if(Input.GetMouseButtonDown(0) && canPlace) {
                 tileGrid[mousePos.x, mousePos.y] = currentTileType;
                 UpdateTile(mousePos, true);
-                tracksHeld--;
+                player.tracksHeld--;
+
+                RailStructure railStruct = new RailStructure();
+                railStruct.position = mousePos;
+                railStruct.ResetStability();
+                rails.Add(railStruct);
 
                 audioSource.PlayOneShot(placingTrack);
                 
             }
             
             if(Input.GetMouseButtonDown(1) && HasTile(mousePos)) {
-                tileGrid[mousePos.x, mousePos.y] = TileType.None;
-                UpdateTile(mousePos, true);
-                tracksHeld++;
+                RemoveTile(mousePos);
             }
         }
         else {
@@ -358,7 +402,42 @@ public class RailController : MonoBehaviour {
         drawHelper = true;
     }
 
+    void RemoveTile(Vector3Int pos) {
+        tileGrid[pos.x, pos.y] = TileType.None;
+        UpdateTile(pos, true);
+        RailStructureRemove(pos);
+        player.tracksHeld++;
+    }
+
     public bool GatesConnected() {
         return gatesConnected;
     }
+
+    void RailStructureRemove(Vector3Int pos) {
+        foreach(RailStructure rail in rails) {
+            if(rail.position.x == pos.x && rail.position.y == pos.y) {
+                rails.Remove(rail);
+                break;
+            }
+        }
+    }
+
+    RailStructure RailStructureFind(Vector3Int pos) {
+        foreach(RailStructure rail in rails) {
+            if(rail.position.x == pos.x && rail.position.y == pos.y) {
+                return rail;
+            }
+        }
+        return null;
+    }
+    class RailStructure {
+        public Vector3Int position;
+        public float stability;
+
+        public void ResetStability() {
+            stability = 2f;
+        }
+    }
 }
+
+

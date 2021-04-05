@@ -72,7 +72,7 @@ public class Player : MonoBehaviour {
             case PlayerState.Minecart:
                 BuildingTracks();
                 ThrowPickAxe();
-                if((minecart.transform.position - transform.position).magnitude > 5f) {
+                if(minecart && (minecart.transform.position - transform.position).magnitude > 5f) {
                     minecart = null;
                 }
 
@@ -210,7 +210,7 @@ public class Player : MonoBehaviour {
             }
 
             if(building) {
-                railController.GetInputs(ref tracksHeld);
+                railController.GetInputs();
             }
         }
     }
