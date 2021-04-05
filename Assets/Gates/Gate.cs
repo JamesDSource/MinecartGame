@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Interactable), typeof(Animator))]
 public class Gate : MonoBehaviour { 
+    [SerializeField] bool exit;
     [SerializeField] SceneManaging sceneManaging;
     [SerializeField] RailController railController;
     Interactable interactable;
@@ -14,9 +15,10 @@ public class Gate : MonoBehaviour {
         interactable.interactedWith = LevelEnd;
 
         animator = GetComponent<Animator>();
+        animator.SetBool("exit", exit);
     }
     void Update() {
-        if(railController.GatesConnected()) {
+        if(exit && railController.GatesConnected()) {
             interactable.isInteractable = true;
             animator.SetBool("complete", true);
         }

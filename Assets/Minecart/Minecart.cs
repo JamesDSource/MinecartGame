@@ -23,9 +23,12 @@ public class Minecart : MonoBehaviour {
     float jump = 0;
 
     AudioSource audioSource;
+    [SerializeField] AudioSource audioSourceEffects;
     [SerializeField] AudioClip moveOnTracks;
     [SerializeField] AudioClip moveOffTracks;
     [SerializeField] AudioClip gemCollected;
+    [SerializeField] AudioClip mineCartEntered;
+    [SerializeField] AudioClip mineCartJump;
     AudioClip lastClip = null;
 
     public int gems = 0;
@@ -47,6 +50,7 @@ public class Minecart : MonoBehaviour {
         if(controller.collisions.below) {
             if(jump > 0) {
                 velocity.y = onRail ? jumpVelocity : offRailsJumpVelocity;
+                audioSourceEffects.PlayOneShot(mineCartJump, 1);
                 jump = 0;
             }
             else {
@@ -71,7 +75,7 @@ public class Minecart : MonoBehaviour {
             velocity.y = 0;
         }
 
-        if(controller.collisions.left || controller.collisions.right) {
+        if(controller.collisions.below && (controller.collisions.left || controller.collisions.right)) {
             velocity.x = 0;
         }
 
@@ -84,7 +88,7 @@ public class Minecart : MonoBehaviour {
             else {
                 audioSource.clip = moveOffTracks;
             }
-            audioSource.volume = Mathf.Abs(velocity.x) / (onRail ? maxMovementSpeed : offRailsMaxMovementSpeed);
+            audioSource.volume = 2.2f*(Mathf.Abs(velocity.x) / (onRail ? maxMovementSpeed : offRailsMaxMovementSpeed));
         }
         else {
             audioSource.clip = null;
@@ -116,6 +120,7 @@ public class Minecart : MonoBehaviour {
 
     void InteractedWith(Player player) {
         player.minecart = this;
+        audioSourceEffects.PlayOneShot(mineCartEntered, 1);
     }
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -123,7 +128,7 @@ public class Minecart : MonoBehaviour {
         if(gem) {
             gems++;
             gem.collected = true;
-            audioSource.PlayOneShot(gemCollected);
+            audioSourceEffects.PlayOneShot(gemCollected, 1);
             Destroy(other.gameObject);
         }
     }

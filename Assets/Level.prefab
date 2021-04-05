@@ -803,6 +803,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2704723923061473795, guid: a0354cfbf8dfc7546a7e806d9b89b279,
         type: 3}
+      propertyPath: exit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704723923061473795, guid: a0354cfbf8dfc7546a7e806d9b89b279,
+        type: 3}
       propertyPath: sceneManaging
       value: 
       objectReference: {fileID: 2979143802243236642}

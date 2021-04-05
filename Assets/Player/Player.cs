@@ -72,6 +72,10 @@ public class Player : MonoBehaviour {
             case PlayerState.Minecart:
                 BuildingTracks();
                 ThrowPickAxe();
+                if((minecart.transform.position - transform.position).magnitude > 5f) {
+                    minecart = null;
+                }
+
                 if(!minecart) {
                     state = PlayerState.Free;
                     break;
@@ -82,7 +86,7 @@ public class Player : MonoBehaviour {
                 }
                 while(minecart.gems >= 3) {
                     minecart.gems -= 3;
-                    tracksHeld += 2;
+                    tracksHeld += 4;
                 }
 
                 animator.SetBool("isJumping", false);
@@ -110,6 +114,7 @@ public class Player : MonoBehaviour {
                     state = PlayerState.Free;
                     break;
                 }
+
                 gemHolding.transform.position = transform.position;
                 gemHolding.transform.rotation = Quaternion.AngleAxis(90, Vector3.forward);
                 break;
