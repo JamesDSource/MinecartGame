@@ -19,7 +19,6 @@ public class Player : MonoBehaviour {
     const float jumpVelocity = 8;
     float jump = 0;
     Vector2 velocity;
-    float momentum = 0;
     float moveSpeed = 3;
     float carryMoveSpeed = 1.5f;
 
@@ -98,7 +97,6 @@ public class Player : MonoBehaviour {
 
                 if(Input.GetKeyDown(KeyCode.Space)) {
                     velocity.y = jumpVelocity + Mathf.Clamp(minecart.velocity.y, 0, 3);
-                    momentum = Mathf.Max(minecart.velocity.x, 3);
                     minecart = null;
                 }
                 break;
@@ -131,9 +129,6 @@ public class Player : MonoBehaviour {
     }
 
     void Movement(float speed, bool takeInputs = true) {
-        if(controller.collisions.below) {
-            momentum = Numbers.Approach(momentum, 0, 8f*Time.deltaTime);
-        }
 
         velocity.x = 0;
         if(takeInputs) {
@@ -152,12 +147,7 @@ public class Player : MonoBehaviour {
 
 
         velocity.x *= speed;
-        velocity.x += momentum;
         velocity.y += gravity*Time.deltaTime;
-
-        if(Mathf.Sign(velocity.x) != Mathf.Sign(momentum)) {
-            momentum = 0;
-        }
 
         if(Input.GetKeyDown(KeyCode.W)) {
             jump = 0.5f;
@@ -166,7 +156,6 @@ public class Player : MonoBehaviour {
         if(jump > 0 && controller.collisions.below && takeInputs) {
             velocity.y = jumpVelocity;
             jump = 0;
-            momentum = 0;
             animator.SetBool("isJumping", true);
         }
         else if(jump > 0) {

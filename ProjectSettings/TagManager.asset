@@ -74,3 +74,6 @@ TagManager:
   - name: Enemies
     uniqueID: 3224866419
     locked: 0
+  - name: Tutorials
+    uniqueID: 229712651
+    locked: 0
